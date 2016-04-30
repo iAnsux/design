@@ -124,8 +124,7 @@ header {
     margin: 0 auto;
 }
 
-.news .title,
-.team .title {
+.sec-title {
     position: relative;
     width: 660px;
     height: 80px;
@@ -133,22 +132,19 @@ header {
     text-align: center;
 }
 
-.news .title h2,
-.team .title h2 {
+.sec-title h2 {
     font-size: 48px;
     color: #404040;
     font-weight: normal;
     margin-bottom: 16px;
 }
 
-.news .title span,
-.team .title span {
+.sec-title span {
     font-size: 16px;
     color: #404040;
 }
 
-.news .line,
-.team .line {
+.sec-title .line {
     position: absolute;
     width: 132px;
     height: 2px;
@@ -156,13 +152,11 @@ header {
     background: #F39800;
 }
 
-.news .title .left,
-.team .title .left {
+.sec-title .left {
     left: 0px;
 }
 
-.news .title .right,
-.team .title .right {
+.sec-title .right {
     right: 0px;
 }
 
@@ -188,4 +182,11 @@ header {
     height: 222px;
     float: left;
     background: #eee;
+}
+
+.idea {
+    width: 1920px;
+    height: 556px;
+    margin: 0 auto 60px auto;
+    background: url(../img/idea.jpg) no-repeat;
 }
