@@ -162,14 +162,44 @@ header {
   margin: 0 -15px;
 }
 .thumbnail {
-  min-height: 300px;
   border-radius: 0px;
   border: none;
-  background: #eee;
+  padding: 0px;
+}
+.thumbnail img{
+  display: block;
+  width: 100%;
+}
+.thumbnail .caption{
+  padding: 12px 0px;
+  position: relative;
+}
+.link-text{
+  font-size: 15px;
+  text-decoration: none;
+  color: #666;
+}
+.link-text:hover{
+  color: #ED6B1A;
+  text-decoration: none;
+}
+
+.news .link-btn{
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+  color: #ED6B1A;
+  padding: 2px 18px;
+  border: solid 1px #ED6B1A;
+}
+
+.news .link-btn:hover{
+  color: #FFF;
+  background: #ED6B1A;
+  text-decoration: none;
 }
 
 .thumbnail a,.thumbnail .caption{
-  display: none;
 }
 
 .idea {
@@ -188,7 +218,7 @@ header {
 .tab-click a{
   width: 100%;
   font-size: 22px;
-  background: #D7D7D7;
+  border: solid 1px #D7D7D7;
   text-decoration: none;
   color: #686868;
   height: 50px;
@@ -198,10 +228,28 @@ header {
 }
 
 .tab-click .active a{
-  background: #F39800;
+  border-color: #ED6B1A;
+  background: #ED6B1A;
   color: #fff;
 }
 
+.case .thumbnail {
+  border-radius: 0px;
+  border: solid 1px #D7D7D7;
+  padding: 10px;
+}
+
+.case .link-btn{
+  width: 62px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  color: #666;
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+  background: url("../img/view-btn.png") no-repeat;
+}
 
 @media (max-width: 992px){
   .nav {
