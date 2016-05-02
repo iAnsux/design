@@ -5,41 +5,54 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>BOGUAN</title>
-   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/bootstrap.css">
    <link rel="stylesheet" href="css/bs.css">
    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 
 <body>
-<header>
-   <div class="container web-nav">
-      <div class="logo">
-         <img src="img/logo.png" alt="">
-      </div>
-      <div class="nav">
-         <ul>
-            <li class="active">
-               <a href="###">网站首页</a>
-            </li>
-            <li>
-               <a href="###">关于博观</a>
-            </li>
-            <li>
-               <a href="###">公司动态</a>
-            </li>
-            <li>
-               <a href="###">团队成员</a>
-            </li>
-            <li>
-               <a href="###">业务案例</a>
-            </li>
-            <li>
-               <a href="###">联系我们</a>
-            </li>
-         </ul>
-      </div>
-   </div>
+
+<section id="home"></section>
+
+<header class="navbar-wrapper">
+         <div class="navwrapper">
+            <div class="navbar navbar-inverse navbar-static-top">
+               <div class="container">
+                  <div class="navbar-header">
+                     <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                  </div>
+                  <div class="navbar-collapse collapse" role="navigation">
+                     <ul class="nav navbar-nav navbar-right">
+                        <li class="menuItem active">
+                           <a href="#home">网站首页</a>
+                        </li>
+                        <li class="menuItem">
+                           <a href="#about">关于博观</a>
+                        </li>
+                        <li class="menuItem">
+                           <a href="#news">公司动态</a>
+                        </li>
+                        <li class="menuItem">
+                           <a href="#team">团队成员</a>
+                        </li>
+                        <li class="menuItem">
+                           <a href="#case">业务案例</a>
+                        </li>
+                        <li class="menuItem">
+                           <a href="#contact">联系我们</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div><!-- End Navbar -->
 </header>
+
 
 <section class="container-fluid">
    <div class="row">
@@ -48,7 +61,7 @@
 </section>
 <!--  end banner  -->
 
-<section class="container">
+<section id="about" class="container">
    <div class="row about">
       <div class="title">
          <h2>关于博观</h2>
@@ -82,7 +95,7 @@
 </section>
 <!--  end ad-1  -->
 
-<section class="container">
+<section id="news" class="container">
    <div class="sec-title">
       <div class="line left"></div>
       <div class="text">
@@ -160,12 +173,12 @@
 
 <section class="container-fluid ad">
    <div class="row">
-      <img src="img/ad-2.jpg" class="img-responsive" alt=""/>
+      <img class="img-responsive" src="img/ad-2.jpg" alt=""/>
    </div>
 </section>
 <!--  end ad-2  -->
 
-<section class="container">
+<section id="team" class="container">
    <div class="sec-title">
       <div class="line left"></div>
       <div class="text">
@@ -233,7 +246,7 @@
 </section>
 <!--  end idea  -->
 
-<section class="container case">
+<section id="case" class="container case">
    <div class="sec-title">
       <div class="line left"></div>
       <div class="text">
@@ -347,8 +360,32 @@
    </div>
 </section>
 <!--  end idea  -->
-<script src="./js/jquery.min.js"></script>
+
+<section id="contact"></section>
+
+<!--<script src="./js/jquery.min.js"></script>-->
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
+<script src="./js/stickUp.min.js"></script>
+<script type="text/javascript">
+   jQuery(function($) {
+      $(document).ready( function() {
+         $('.navbar-wrapper').stickUp({
+            parts: {
+               0: 'home',
+               1: 'about',
+               2: 'news',
+               3: 'team',
+               4: 'case',
+               5: 'contact'
+            },
+            itemClass: 'menuItem',
+            itemHover: 'active',
+            marginTop: 'auto'
+         });
+      });
+   });
+</script>
 </body>
 
 </html>
