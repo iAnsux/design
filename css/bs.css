@@ -21,6 +21,8 @@ header {
   padding: 0px;
 }
 .isStuck{
+  box-shadow: 0 0 1px 0px rgba(0,0,0,0.3),0 0 6px 2px rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.94);
   margin: 0;
   padding: 5px 0;
 }
@@ -28,7 +30,7 @@ header {
   margin-bottom: 0px;
 }
 .navbar.navbar-inverse.navbar-static-top {
-  background: #fff;
+  background: none;
   border: none;
 }
 .navbar.navbar-inverse.navbar-static-top a{
@@ -311,5 +313,14 @@ header {
   }
   .thumbnail{
     margin: 20px 20px 30px 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+  }
+  .navbar-toggle {
+    margin-right: -10px;
   }
 }
