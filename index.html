@@ -15,42 +15,44 @@
 <section id="home"></section>
 
 <header class="navbar-wrapper">
-         <div class="navwrapper">
-            <div class="navbar navbar-inverse navbar-static-top">
-               <div class="container">
-                  <div class="navbar-header">
-                     <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                     </button>
-                     <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
-                  </div>
-                  <div class="navbar-collapse collapse" role="navigation">
-                     <ul class="nav navbar-nav navbar-right">
-                        <li class="menuItem active">
-                           <a href="#home">网站首页</a>
-                        </li>
-                        <li class="menuItem">
-                           <a href="#about">关于博观</a>
-                        </li>
-                        <li class="menuItem">
-                           <a href="#news">公司动态</a>
-                        </li>
-                        <li class="menuItem">
-                           <a href="#team">团队成员</a>
-                        </li>
-                        <li class="menuItem">
-                           <a href="#case">业务案例</a>
-                        </li>
-                        <li class="menuItem">
-                           <a href="#contact">联系我们</a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
+   <div class="navwrapper">
+      <div class="navbar navbar-inverse navbar-static-top">
+         <div class="container">
+            <div class="navbar-header">
+               <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                       data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
             </div>
-         </div><!-- End Navbar -->
+            <div class="navbar-collapse collapse" role="navigation">
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="menuItem active">
+                     <a href="#home">网站首页</a>
+                  </li>
+                  <li class="menuItem">
+                     <a href="#about">关于博观</a>
+                  </li>
+                  <li class="menuItem">
+                     <a href="#news">公司动态</a>
+                  </li>
+                  <li class="menuItem">
+                     <a href="#team">团队成员</a>
+                  </li>
+                  <li class="menuItem">
+                     <a href="#case">业务案例</a>
+                  </li>
+                  <li class="menuItem">
+                     <a href="#contact">联系我们</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- End Navbar -->
 </header>
 
 
@@ -91,6 +93,10 @@
 <section class="container-fluid transit">
    <div class="row">
       <img src="./img/transit-1.jpg" class="img-responsive" alt=""/>
+   </div>
+   <div class="text-content">
+      <div class="cn">创新动力，非凡演绎</div>
+      <div class="en">Extraordinary interpretation of the innovation ability.</div>
    </div>
 </section>
 <!--  end ad-1  -->
@@ -175,6 +181,10 @@
    <div class="row">
       <img class="img-responsive" src="img/transit-2.jpg" alt=""/>
    </div>
+   <div class="text-content">
+      <div class="cn">诚信，是博观的生存之本；</div>
+      <div class="cn">共赢，是博观的决胜之道。</div>
+   </div>
 </section>
 <!--  end ad-2  -->
 
@@ -255,12 +265,11 @@
       </div>
       <div class="line right"></div>
    </div>
-   <div class="tab-click clearfix">
+   <div class="tab-items clearfix">
       <div class="item"><a href="###">动画</a></div>
       <div class="item"><a href="###">影视</a></div>
       <div class="item active"><a href="###">APP制作</a></div>
       <div class="item"><a href="###">网站建设</a></div>
-      <div class="item"><a href="###">旅游产品</a></div>
    </div>
    <div class="tab-content">
       <div class="row">
@@ -361,15 +370,62 @@
 </section>
 <!--  end idea  -->
 
-<section id="contact"></section>
+<section class="container-fluid" id="contact">
+   <div class="sec-title">
+      <div class="line left"></div>
+      <div class="text">
+         <h2>联系我们</h2>
+         <span>CONTACT US</span>
+      </div>
+      <div class="line right"></div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-5">
+            <div class="col-md-12">
+               <div class="cu-line">
+                  <div class="circle"></div>
+                  <div class="text">广西桂林市桂林电子科技大学西校区</div>
+               </div>
+               <div class="cu-line">
+                  <div class="circle"></div>
+                  <div class="text">0773-2238720</div>
+               </div>
+               <div class="cu-line">
+                  <div class="circle"></div>
+                  <div class="text">511594363@qq.com</div>
+               </div>
+               <div class="cu-line">
+                  <div class="circle"></div>
+                  <div class="text">www.boguan.com</div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-7">
+            <div class="col-md-6">
+               <input type="text" placeholder="请输入您的姓名"/>
+            </div>
+            <div class="col-md-6">
+               <input type="text" placeholder="请输入您的邮箱"/>
+            </div>
+            <div class="col-md-12">
+               <textarea rows="6" placeholder="您的留言"></textarea>
+            </div>
+            <div class="col-md-12 submit-btn">
+               <button type="button">发送</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 
 <!--<script src="./js/jquery.min.js"></script>-->
 <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/stickUp.min.js"></script>
 <script type="text/javascript">
-   jQuery(function($) {
-      $(document).ready( function() {
+   jQuery(function ($) {
+      $(document).ready(function () {
          $('.navbar-wrapper').stickUp({
             parts: {
                0: 'home',
