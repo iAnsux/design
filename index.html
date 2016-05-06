@@ -394,7 +394,7 @@
          <div role="tabpanel" class="tab-pane" id="tab_video">
             <div class="case-box clearfix">
                <div class="item large-item">
-                  <div class="pic"><img src="uploads/case/flash/DH_01.jpg" alt=""/></div>
+                  <div class="pic"><img id="large-pic" src="uploads/case/flash/DH_01.jpg" alt=""/></div>
                   <div class="txt">国家安全公益动画广告</div>
                </div>
                <div class="item">
@@ -649,8 +649,7 @@
    </div>
 </section>
 
-<!--<script src="./js/jquery.min.js"></script>-->
-<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/stickUp.min.js"></script>
 <script type="text/javascript">
@@ -676,14 +675,20 @@
             }
             $('.large-item').siblings().height(height);
          });
-         (function changeHeight() {
+
+      });
+   });
+   $(window).load(function(){
+      setTimeout(function(){
+         (function() {
             var height = $('.large-item').height();
             if ($(window).width() > 768) {
                height = height / 2;
             }
             $('.large-item').siblings().height(height);
+            console.log(height);
          })();
-      });
+      },10)
    });
 </script>
 </body>
