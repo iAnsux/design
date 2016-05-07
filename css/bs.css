@@ -21,6 +21,12 @@ header {
   height: 46px;
   padding: 0px;
 }
+.nav > li{
+  padding: 0 15px;
+}
+.nav > li > a{
+  padding: 10px 0px;
+}
 
 .isStuck {
   box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.3), 0 0 6px 2px rgba(0, 0, 0, 0.15);
@@ -41,15 +47,18 @@ header {
 .navbar.navbar-inverse.navbar-static-top a {
   font-size: 18px;
   color: #323232;
+  border-bottom: solid 1px transparent;
 }
 
 .navbar.navbar-inverse.navbar-static-top a:hover {
-  color: #0A64A4;
+  color: #323232;
+  border-bottom-color: #323232;
 }
 
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus,.navbar-inverse .navbar-nav > .active > a:hover {
   background: none;
   color: #FE7E17;
+  border-bottom-color: #FE7E17;
   /*font-weight:700;*/
 }
 
