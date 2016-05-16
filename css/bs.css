@@ -21,11 +21,22 @@ header {
   height: 46px;
   padding: 0px;
 }
-.nav > li{
-  padding: 0 15px;
+
+.nav > li {
+  padding: 0 25px;
+  position: relative;
 }
-.nav > li > a{
+
+.nav > li > a {
   padding: 10px 0px;
+}
+
+.border-right {
+  height: 14px;
+  border-left: solid 1px #a9a9a9;
+  position: absolute;
+  right: 0px;
+  top: 14px;
 }
 
 .isStuck {
@@ -44,18 +55,18 @@ header {
   border: none;
 }
 
-.navbar.navbar-inverse.navbar-static-top a {
+.navbar.navbar-inverse.navbar-static-top .navbar-right a {
   font-size: 18px;
   color: #323232;
   border-bottom: solid 1px transparent;
 }
 
-.navbar.navbar-inverse.navbar-static-top a:hover {
+.navbar.navbar-inverse.navbar-static-top .navbar-right a:hover {
   color: #323232;
   border-bottom-color: #323232;
 }
 
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus,.navbar-inverse .navbar-nav > .active > a:hover {
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
   background: none;
   color: #FE7E17;
   border-bottom-color: #FE7E17;
@@ -71,6 +82,12 @@ header {
 .navbar-inverse .navbar-toggle .icon-bar {
   color: #323232;
   background: #323232;
+}
+
+.navbar.navbar-inverse.navbar-static-top .navbar-right .active a {
+  background: none;
+  color: #FE7E17;
+  border-bottom-color: #FE7E17;
 }
 
 .navbar-toggle {
@@ -98,7 +115,7 @@ header {
   margin-bottom: 85px;
 }
 
-.about .title {
+.about > .title {
   width: 220px;
   margin: 0 auto;
   text-align: center;
@@ -122,21 +139,19 @@ header {
 }
 
 .about .picture {
-  min-height: 500px;
-  background: #ccc;
+  width: 720px;
 }
 
 .about .textinfo {
-  width: 425px;
+  width: 440px;
   float: right;
 }
 
 .about .textinfo h3 {
-  margin-top: 38px;
-  margin-bottom: 50px;
-  font-size: 32px;
-  text-align: right;
-  color: #404040;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #323232;
   font-weight: normal;
 }
 
@@ -145,12 +160,29 @@ header {
 }
 
 .about .text p {
-  text-indent: 2em;
   line-height: 1.5em;
-  margin-top: 20px;
-  color: #404040;
+  margin-top: 18px;
+  color: #323232;
+  font-size: 16px;
   letter-spacing: 1.5px;
   word-spacing: 8px;
+}
+
+.survey {
+  margin-top: 100px;
+  text-align: center;
+  color: #323232;
+}
+
+.survey .title {
+  font-size: 18px;
+  margin-top: 18px;
+  color: #FE7E17;
+  margin-bottom: 10px;
+}
+
+.survey .text {
+  font-size: 14px;
 }
 
 .transit {
@@ -180,7 +212,7 @@ header {
 
 .sec-title {
   position: relative;
-  width: 660px;
+  max-width: 660px;
   height: 80px;
   margin: 0 auto 50px auto;
   text-align: center;
@@ -238,14 +270,12 @@ header {
 /*---------------*/
 .link-text {
   display: block;
-  padding-left: 5px;
-  padding-right: 75px;
   font-size: 15px;
   text-decoration: none;
   color: #666;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
+  height: 45px;
 }
 
 .link-text:hover {
@@ -255,11 +285,11 @@ header {
 
 .news .link-btn {
   display: block;
-  position: absolute;
-  right: 5px;
-  bottom: 10px;
   color: #ED6B1A;
-  padding: 2px 18px;
+  padding: 2px;
+  width: 60px;
+  text-align: center;
+  margin: 0 auto;
   border: solid 1px #ED6B1A;
 }
 
@@ -269,10 +299,40 @@ header {
   text-decoration: none;
 }
 
-.news .thumbnail {
-  overflow: hidden;
+.news time {
+  font-size: 12px;
+  display: block;
+  margin: 5px 0px 10px 0px;
 }
 
+.news .abstract {
+  font-size: 14px;
+}
+
+.news .thumbnail {
+  overflow: hidden;
+  border: solid 1px #D7D7D7;
+}
+
+.news .caption {
+  padding: 10px;
+}
+
+#news .pager a {
+  display: inline-block;
+  padding: 3px 9px;
+  border: solid 1px #A9A9A9;
+  margin: 0 2px;
+  text-decoration: none;
+}
+
+#news .pager a.active {
+  background: #FE7E17;
+  border-color: #FE7E17;
+  color: #FFFFFF;
+}
+
+/*
 .news .thumbnail .caption {
   position: absolute;
   top: auto;
@@ -305,6 +365,7 @@ header {
   -webkit-transition-delay: 0.05s;
   transition-delay: 0.05s;
 }
+*/
 
 /* effect-6 css */
 .team .thumbnail {
@@ -319,15 +380,18 @@ header {
   width: 100%;
   transition: 0.5s;
 }
-.team .thumbnail:hover{
+
+.team .thumbnail:hover {
   border: solid 2px #eee;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
+
 .team .thumbnail:hover img {
   transform: scale(0.3) translateY(-110%);
   position: relative;
   z-index: 9;
 }
+
 .text-desc {
   position: absolute;
   left: 0;
@@ -338,6 +402,7 @@ header {
   width: 100%;
   padding: 20px;
 }
+
 .team .thumbnail .text-desc {
   transform: translateY(100%);
   opacity: 0;
@@ -349,6 +414,7 @@ header {
   transform: translateY(0px);
   opacity: 1;
 }
+
 .show-btn {
   display: inline-block;
   padding: 5px 10px;
@@ -359,12 +425,15 @@ header {
   text-decoration: none;
   transition: 0.4s;
 }
-.text-desc h3{
+
+.text-desc h3 {
   font-size: 16px;
 }
-.text-desc h4{
+
+.text-desc h4 {
   font-size: 15px;
 }
+
 /* effect-6 css end */
 
 .idea {
@@ -434,9 +503,11 @@ header {
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
+
 .tabs-warp .caption {
   position: relative;
 }
+
 .case .link-btn {
   width: 62px;
   height: 22px;
@@ -581,10 +652,43 @@ header {
   color: #FFFFFF;
 }
 
+@media (max-width: 1200px) {
+  .about .picture {
+    width: 600px;
+  }
+
+  .about .textinfo {
+    width: 350px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-right {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 992px) {
+  .about .picture {
+    width: 100%;
+  }
+
   .about .textinfo {
     width: 100%;
   }
+
+  .navbar-collapse {
+    border-top: none;
+  }
+
+  .navbar.navbar-inverse.navbar-static-top .navbar-right a {
+    border-bottom: none;
+  }
+
+  .border-right {
+    display: none;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -603,8 +707,41 @@ header {
   .case-box .item {
     width: 50%;
   }
-  .team .thumbnail{
+
+  .team .thumbnail {
     height: auto;
+  }
+
+  .survey .title {
+    font-size: 15px;
+    margin-top: 18px;
+    color: #FE7E17;
+    margin-bottom: 10px;
+  }
+
+  .survey .top-icon img {
+    width: 100%;
+  }
+
+  .survey .text {
+    font-size: 12px;
+    /* text-align:justify;*/
+  }
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .about .textinfo h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .about .text p {
+    line-height: 1.5em;
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
   }
 }
 
@@ -616,4 +753,5 @@ header {
   .navbar-toggle {
     margin-right: -10px;
   }
+
 }
