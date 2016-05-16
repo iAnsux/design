@@ -115,24 +115,10 @@ header {
   margin-bottom: 85px;
 }
 
-.about > .title {
-  width: 220px;
-  margin: 0 auto;
+.section-title{
   text-align: center;
 }
 
-.about .title h2 {
-  font-weight: normal;
-  color: #404040;
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.about .title span {
-  font-size: 15px;
-  font-weight: bold;
-  color: #767575;
-}
 
 .about .content {
   margin-top: 80px;
@@ -189,6 +175,10 @@ header {
   margin-top: 50px;
   margin-bottom: 50px;
   position: relative;
+}
+
+.transit .row img{
+  margin: 0 auto;
 }
 
 .text-content {
@@ -319,6 +309,7 @@ header {
 }
 
 #news .pager a {
+  color: #A9A9A9;
   display: inline-block;
   padding: 3px 9px;
   border: solid 1px #A9A9A9;
