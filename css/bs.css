@@ -325,6 +325,115 @@ header {
   color: #FFFFFF;
 }
 
+#NewsModal .modal-header{
+  border-bottom:none;
+}
+
+#NewsModal .modal-content{
+  background: url("../img/news-bg.jpg");
+  background-size:100%;
+  color: #FFF;
+  overflow: hidden;
+}
+#NewsModal .ori-img{
+  margin-right: 380px;
+}
+#NewsModal .ori-img img{
+  width: 100%;
+}
+.news-detail{
+  position: absolute;
+  width: 380px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  box-sizing: border-box;
+  padding: 50px 40px 0 25px;
+}
+.news-detail .float-bg{
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: rgba(0,0,0,0.8);
+}
+.news-detail .wrap{
+  display: block;
+  max-width: 1688px;
+  background: #fff;
+  max-height: 700px;
+  margin: 50px auto;
+}
+.news-detail .imgs{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+#NewsModal .close{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  opacity:1;
+  z-index: 99999;
+}
+
+.news-detail .title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.news-detail .time{
+  margin-bottom: 6px;
+}
+.news-detail .content{
+  font-size: 15px;
+  line-height: 1.4em;
+  padding-bottom: 20px;
+}
+
+.imgs img{
+  opacity: 0.6;
+  cursor: pointer;
+}
+.imgs img.active{
+  opacity: 1;
+}
+@media (min-width: 1688px) {
+  .modal-lg {
+    width: 1688px;
+  }
+}
+@media (max-width: 1688px) {
+  #NewsModal{
+    padding-right: 0px!important;
+  }
+  #news .modal-lg {
+    width: 90%;
+    margin: 20px auto;
+  }
+  #NewsModal .ori-img{
+    margin-right: 0px;
+  }
+  #NewsModal .ori-img img{
+    width: 100%;
+  }
+  .news-detail{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 40px 0 25px;
+  }
+  .news-detail .imgs{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    top: -20px;
+    text-align: center;
+  }
+}
 /*
 .news .thumbnail .caption {
   position: absolute;
@@ -722,7 +831,6 @@ header {
   }
 
 }
-
 @media (min-width: 992px) and (max-width: 1200px) {
   .about .textinfo h3 {
     margin-top: 10px;
