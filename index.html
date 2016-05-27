@@ -62,7 +62,20 @@
 
 <section class="container-fluid transit">
    <div class="row">
-      <img class="img-responsive" src="img/banner_1.jpg" alt="">
+      <video id="video" src="uploads/video.mp4" width="100%" autoplay loop></video>
+      <div class="fix-top"></div>
+      <div class="video2">
+         <video id="fix_video" src="uploads/video.mp4" width="100%" height="auto" controls="controls"></video>
+         <a id="close_video">
+            <i class="glyphicon glyphicon-remove"></i>
+         </a>
+      </div>
+      <div class="banner-detail">
+         <a id="play" href="">
+            <img src="./img/btn_play.png" alt=""/>
+         </a>
+      </div>
+      <!--<img class="img-responsive" src="img/banner_1.jpg" alt="">-->
    </div>
 </section>
 <!--  end banner  -->
@@ -127,7 +140,7 @@
    <div class="row">
       <img src="./img/transit-1.jpg" class="img-responsive" alt=""/>
    </div>
-   <div class="text-content">
+   <div class="text-content txt-fade">
       <div class="cn">创新动力，非凡演绎</div>
       <div class="en">Extraordinary interpretation of the innovation ability.</div>
    </div>
@@ -139,7 +152,7 @@
       <img src="img/title-news.png"/>
    </div>
    <div class="row news">
-      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="n in newsByPage">
+      <div class="col-md-3 col-sm-4 col-xs-6 fade-in" ng-class="{'fade-out':changeNews}" ng-repeat="n in newsByPage">
          <div class="thumbnail">
             <a><img class="lazy" ng-src="uploads/news/{{n.feedImg}}.png"></a>
             <div class="caption">
@@ -154,7 +167,7 @@
    <div class="modal fade" id="NewsModal" data-backdrop="false">
       <div class="modal-dialog modal-lg">
          <div class="modal-content">
-               <div class="ori-img">
+               <div class="fade-in ori-img" ng-class="{'fade-out':changeFocus}">
                   <img ng-src="./uploads/news{{nowNews.newImgs[focusIndex].ori}}.jpg" alt=""/>
                </div>
                <div class="news-detail">
@@ -658,6 +671,12 @@
 <script type="text/javascript">
    jQuery(function ($) {
       $(document).ready(function () {
+         $(".menuItem").click(function() {
+            $("html, body").animate({
+               scrollTop: $($(this).find('a').attr("href")).offset().top
+            },1000);
+            return false;
+         });
          $('.navbar-wrapper').stickUp({
             parts: {
                0: 'home',
@@ -678,6 +697,36 @@
             }
             $('.large-item').siblings().height(height);
          });
+         var video = document.getElementById("video");
+         var fix_video = document.getElementById("fix_video");
+         $('#play').click(function(){
+            video.pause();
+            $('.fix-top').hide();
+            $('.banner-detail').hide();
+            $('.video2').show();
+            setTimeout(function(){
+               fix_video.play();
+            },100);
+         });
+         $('#close_video').click(function(){
+            video.play();
+            $('.fix-top').show();
+            $('.banner-detail').show();
+            $('.video2').hide();
+            fix_video.pause();
+         });
+
+         $(window).bind("scroll", function(event){
+            //窗口的高度+看不见的顶部的高度=屏幕低部距离最顶部的高度
+            var thisButtomTop = parseInt($(window).height()) + parseInt($(window).scrollTop())-200;
+            var thisTop = parseInt($(window).scrollTop()); //屏幕顶部距离最顶部的高度
+            var PictureTop = parseInt($(".text-content").eq(0).offset().top);
+            if (PictureTop >= thisTop && PictureTop <= thisButtomTop) {
+               $(".text-content").eq(0).addClass('in');
+               //  $("#你的要滚动加载的ID").attr("src", $("#你的要滚动加载的ID").attr("haoroomslazyload"));
+               //此处可以执行你的加载函数，加载函数由原来的document.ready中，移到这里来！
+            }
+         })
 
       });
    });
@@ -697,7 +746,7 @@
 <script src="js/angular.min.js"></script>
 <script type="text/javascript">
    angular.module('myApp', [])
-       .controller('myController', function ($scope,$window) {
+       .controller('myController', function ($scope,$window,$timeout) {
           $scope.news = [
              {
                 title: '“全民国家安全教育日”公益宣传片在广西卫视黄金时段播出',
@@ -826,6 +875,10 @@
              $('#NewsModal').modal();
           }
           $scope.focus = function(n,index){
+             $scope.changeFocus = true;
+             $timeout(function(){
+                $scope.changeFocus = false;
+             },500)
             $scope.focusIndex = index;
           }
 
@@ -843,6 +896,10 @@
 
           $scope.pageIndex = 1;
           $scope.changePageIndex = function(i){
+             $scope.changeNews = true;
+             $timeout(function(){
+                $scope.changeNews = false;
+             },500)
              $scope.pageIndex = i;
           }
           $scope.$watch("pageIndex",function(nv,ov){
