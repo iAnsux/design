@@ -1,0 +1,130 @@
+html,body{
+    background-color: rgb(230,230,230)!important;
+    margin: 0;
+}
+
+.aui-slide-page-wrap{
+    display: inline-block!important;
+    width: 80px!important;
+    right: 0px!important;
+    left: auto!important;
+    bottom: 0px!important;
+    vertical-align: middle;
+}
+.img-desc{
+    position: absolute;
+    height: 30px;
+    bottom: 0px;
+    z-index: 9999;
+    font-size: 15px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    line-height: 30px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.tab-bar{
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.tab-bar td{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 11px;
+    color: #666;
+    padding: 5px 0;
+}
+
+.tab-bar td .text{
+    color: #a9a9a9;
+}
+
+.tab-bar td img{
+    width: 20px;
+    height: 20px;
+}
+
+.content{
+}
+
+.content .item{
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.content .item .left{
+    float: left;
+    width: 110px;
+    height: 70px;
+}
+
+.content .item .right{
+    margin-left: 120px;
+}
+
+.content .item .right .title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-size: 14px;
+    color: #555;
+    height: 25px;
+    margin-top: 5px;
+}
+
+.content .item .right .detail{
+    color: #000000;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.content .item img{
+    width: 100%;
+    height: 100%;
+}
+
+.appdetail img{
+    width: 100%;
+}
+
+.aui-line-x{
+    margin-top: 45px;
+}
+
+.header{
+    background-color: #eee;
+    position: fixed;
+    top: 0;
+}
+
+.header .arrow-left,
+.header .aui-title{
+    color: #777;
+}
+
+.content-detail{
+    margin-top: 45px;
+}
+
+.video{
+    margin-top: 45px!important;
+}
+
+.tab_active{
+    color: #ed7b1a!important;
+}
+
+.aui-slide-page-active{
+    background-color: #ed6b1a!important;
+}

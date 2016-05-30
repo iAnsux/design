@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<label><input type="checkbox"
+	<volist name="data.pay_support" id="vo">
+		<if condition="$vo eq 1">
+			 checked='checked'
+		</if>
+	</volist>
+>现金</label>
+<label><input type="checkbox" 
+	<volist name="data.pay_support" id="vo">
+		<if condition="$vo eq 2">
+			checked='checked'
+		</if>
+	</volist>
+>现金</label>
+<label><input type="checkbox" 
+	<volist name="data.pay_support" id="vo">
+		<if condition="$vo eq 3">
+			checked='checked'
+		</if>
+	</volist>
+>现金</label>
+<label><input type="checkbox" 
+	<volist name="data.pay_support" id="vo">
+		<if condition="$vo eq 4">
+			checked='checked'
+		</if>
+	</volist>
+>现金</label>
+</body>
+</html>

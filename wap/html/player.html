@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plugins/aui/css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/mobile/css/test/common.css"/>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav header">
+    <a class="aui-pull-left" onclick="javascript:history.go(-1)"> <span class="aui-iconfont arrow-left aui-icon-left"></span> </a>
+    <a><div class="aui-title"><span>视频播放</span></div></a>
+    <div class="aui-line-x"></div>
+</header>
+<video width="100%" height="200" controls="controls" class="video">
+    <source style="width: 100%;" src="__PUBLIC__/images/test/demo1.mp4" type="video/mp4">
+    您的浏览器不支持此种视频格式。
+</video> 
+</body>
+</html>
+
+<!-- 
+<video></video>属性
+
+autoplay    true | false    如果是 true，则视频在就绪后马上播放。
+controls    true | false    如果是 true，则向用户显示控件，比如播放按钮。
+height  像素  设置视频播放器的高度。
+loop    true | false    完成播放后再次开始播放，即循环播放
+poster  url     当视频未响应或缓冲不足时，该属性值链接到一个图像。该图像将以一定比例被显示出来
+src     url     所播放视频的 url。使用子元素 <source> 实现更好。
+width   像素  设置视频播放器的宽度。
+ -->

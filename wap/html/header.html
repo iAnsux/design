@@ -1,0 +1,111 @@
+<div id="aui-slide">
+	<div class="aui-slide-wrap" >
+		<div class="aui-slide-node bg-dark">
+			<img src="__PUBLIC__/images/test/carousel1.png" />
+			<div class="img-desc">
+				国家安全公益广告
+			</div>
+		</div>
+		<div class="aui-slide-node bg-dark">
+			<img src="__PUBLIC__/images/test/carousel2.png" />
+			<div class="img-desc">
+				杨利伟动画片头
+			</div>
+		</div>
+		<div class="aui-slide-node bg-dark">
+			<img src="__PUBLIC__/images/test/carousel3.png" />
+			<div class="img-desc">
+				【广西高校精神文明建设系列动画】溺水故事
+			</div>
+		</div>
+	</div>
+	<div class="aui-slide-page-wrap"><!--分页容器--></div>
+</div>
+<table class="tab-bar">
+	<tr>
+		<td width="20%">
+			<a href="{:U('test/animation')}">
+				<if condition="$Think.const.ACTION_NAME eq 'animation'">
+					<img class="icon" src="__PUBLIC__/images/test/animation_active.png">
+				<else/>
+					<img class="icon" src="__PUBLIC__/images/test/animation.png">
+				</if>
+				<div class="text 
+					<if condition="$Think.const.ACTION_NAME eq 'animation'">
+						tab_active
+					</if>
+				">动画</div>
+			</a>
+		</td>
+		<td width="20%" >
+			<a href="{:U('test/movie')}">
+				<if condition="$Think.const.ACTION_NAME eq 'movie'">
+					<img class="icon" src="__PUBLIC__/images/test/movie_active.png">
+				<else/>
+					<img class="icon" src="__PUBLIC__/images/test/movie.png">
+				</if>
+				<div class="text 
+					<if condition="$Think.const.ACTION_NAME eq 'movie'">
+						tab_active
+					</if>
+				">影视</div>
+			</a>
+		</td>
+		<td width="20%">
+			<a href="{:U('test/app')}">
+				<if condition="$Think.const.ACTION_NAME eq 'app'">
+					<img class="icon" src="__PUBLIC__/images/test/app_active.png">
+				<else/>
+					<img class="icon" src="__PUBLIC__/images/test/app.png">
+				</if>
+				<div class="text 
+					<if condition="$Think.const.ACTION_NAME eq 'app'">
+						tab_active
+					</if>
+				">APP</div>
+			</a>
+		</td>
+		<td width="20%">
+			<a href="{:U('test/web')}">
+				<if condition="$Think.const.ACTION_NAME eq 'web'">
+					<img class="icon" src="__PUBLIC__/images/test/web_active.png">
+				<else/>
+					<img class="icon" src="__PUBLIC__/images/test/web.png">
+				</if>
+				<div class="text 
+					<if condition="$Think.const.ACTION_NAME eq 'web'">
+						tab_active
+					</if>
+				">网站</div>
+			</a>
+		</td>
+		<td width="20%">
+			<a href="{:U('test/tour')}">
+				<if condition="$Think.const.ACTION_NAME eq 'tour'">
+					<img class="icon" src="__PUBLIC__/images/test/tour_active.png">
+				<else/>
+					<img class="icon" src="__PUBLIC__/images/test/tour.png">
+				</if>
+				<div class="text 
+					<if condition="$Think.const.ACTION_NAME eq 'tour'">
+						tab_active
+					</if>
+				">旅游产品</div>
+			</a>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript" src="__PUBLIC__/plugins/aui/script/aui-slide.js"></script>
+<script type="text/javascript">
+	var slide = new auiSlide({
+		container:document.getElementById("aui-slide"),
+		//"width":300,
+		"height":160,
+		"speed":500,
+		"pageShow":true,
+		"pageStyle":'dot',
+		"loop":true,
+		"autoPlay": 3000, //自动播放
+		'dotPosition':'center',
+	})
+</script>

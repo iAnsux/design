@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的微站</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+</head>
+<body>
+<div id="aui-slide">
+    <div class="aui-slide-wrap" >
+        <div class="aui-slide-node bg-dark">
+            <img src="../image/carousel/carousel1.png" /> <div class="img-desc">
+                国家安全公益广告
+            </div>
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <img src="../image/carousel/carousel2.png" />
+            <div class="img-desc">
+                杨利伟动画片头
+            </div>
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <img src="../image/carousel/carousel3.png" />
+            <div class="img-desc">
+                【广西高校精神文明建设系列动画】溺水故事
+            </div>
+        </div>
+    </div>
+    <div class="aui-slide-page-wrap"><!--分页容器--></div>
+</div>
+<table class="tab-bar">
+    <tr>
+        <td width="20%">
+            <a href="animation.html">
+                <img class="icon" src="../image/icon/animation.png">
+                <div class="text">动画</div>
+            </a>
+        </td>
+        <td width="20%" >
+            <a href="movie.html">
+                <img class="icon" src="../image/icon/movie.png">
+                <div class="text">影视</div>
+            </a>
+        </td>
+        <td width="20%">
+            <a href="app.html">
+                <img class="icon" src="../image/icon/app.png">
+                <div class="text">APP</div>
+            </a>
+        </td>
+        <td width="20%">
+            <a href="web.html">
+                <img class="icon" src="../image/icon/web.png">
+                <div class="text">网站</div>
+            </a>
+        </td>
+        <td width="20%">
+            <a href="tour.html">
+                <img class="icon" src="../image/icon/tour.png">
+                <div class="text">旅游产品</div>
+            </a>
+        </td>
+    </tr>
+</table>
+<div class="content">
+    <a href="{:U('test/tourdetail',array('bgimg'=>1))}">
+        <div class="item">
+            <div class="left">
+               <img src="../image/tour_thumb/tour_01.png" />
+            </div>
+            <div class="right">
+                <div class="title">【桂林“吃什么”水彩绘本】</div>
+                <div class="detail">
+                    桂林“吃什么”水彩绘本主要内容是：介绍了到桂林当
+                    地旅游时有哪些高人气小吃可以品尝，哪些景点值得
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </a>
+    <a href="{:U('test/tourdetail',array('bgimg'=>2))}">
+        <div class="item">
+            <div class="left">
+               <img src="../image/tour_thumb/tour_02.png" />
+            </div>
+            <div class="right">
+                <div class="title">【旅游产品周边设计】</div>
+                <div class="detail">
+                    旅游产品周边设计主要是选取合适的形象，将形象设
+                    计在其他的物品，如抱枕、明星片、台历、书签、笔
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </a>
+</div>
+</body>
+<script type="text/javascript" src="../plugin/aui/script/aui-slide.js"></script>
+<script type="text/javascript">
+    var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        //"width":300,
+        "height":160,
+        "speed":500,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        "autoPlay": 3000, //自动播放
+        'dotPosition':'center',
+    })
+</script>
+</html>
+
+
