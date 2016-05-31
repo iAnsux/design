@@ -5,6 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>BOGUAN</title>
+   <link rel="stylesheet" href="css/font-ali.css"/>
    <link rel="stylesheet" href="css/bootstrap.css">
    <link rel="stylesheet" href="css/bs.css">
    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
@@ -154,12 +155,12 @@
    <div class="row news">
       <div class="col-md-3 col-sm-4 col-xs-6 fade-in" ng-class="{'fade-out':changeNews}" ng-repeat="n in newsByPage">
          <div class="thumbnail">
-            <a><img class="lazy" ng-src="uploads/news/{{n.feedImg}}.png"></a>
+            <a><img class="lazy" ng-src="uploads/news/{{n.feedimg}}.png"></a>
             <div class="caption">
-               <a href="###" class="link-text" ng-bind="n.title"></a>
+               <a ng-click="showNews(n)" class="link-text" ng-bind="n.title"></a>
                <time ng-bind="n.time"></time>
                <p class="abstract" ng-bind="n.content|limitTo:50"></p>
-               <a class="link-btn" ng-click="showNews(n)">详  情</a>
+               <a class="link-btn" ng-click="showNews(n)">详 情</a>
             </div>
          </div>
       </div>
@@ -167,28 +168,32 @@
    <div class="modal fade" id="NewsModal" data-backdrop="false">
       <div class="modal-dialog modal-lg">
          <div class="modal-content">
-               <div class="fade-in ori-img" ng-class="{'fade-out':changeFocus}">
-                  <img ng-src="./uploads/news{{nowNews.newImgs[focusIndex].ori}}.jpg" alt=""/>
-               </div>
-               <div class="news-detail">
-                  <div class="float-bg"></div>
-                  <div class="imgs clearfix">
-                     <div style="margin-right: 6px; display: inline-block;" ng-repeat="n in nowNews.newImgs">
-                        <img ng-class="{'active':focusIndex==$index}" ng-click="focus(n,$index)" ng-src="./uploads/news{{n.thumb}}.jpg" alt=""/>
-                     </div>
+            <div class="fade-in ori-img" ng-class="{'fade-out':changeFocus}">
+               <img ng-src="./uploads/news{{nowNews.newImgs[focusIndex].ori}}.jpg" alt=""/>
+            </div>
+            <div class="news-detail">
+               <div class="float-bg"></div>
+               <div class="imgs clearfix">
+                  <div style="margin-right: 6px; display: inline-block;" ng-repeat="n in nowNews.newImgs">
+                     <img ng-class="{'active':focusIndex==$index}" ng-click="focus(n,$index)"
+                          ng-src="./uploads/news{{n.thumb}}.jpg" alt=""/>
                   </div>
-                  <div class="title" ng-bind="nowNews.title"></div>
-                  <div class="time" ng-bind="nowNews.time"></div>
-                  <div class="content" ng-bind-html="nowNews.content|toStrusted"></div>
                </div>
-         </div><!-- /.modal-content -->
+               <div class="title" ng-bind="nowNews.title"></div>
+               <div class="time" ng-bind="nowNews.time"></div>
+               <div class="content" ng-bind-html="nowNews.content|toStrusted"></div>
+            </div>
+         </div>
+         <!-- /.modal-content -->
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">
                <img src="./img/close_pic.png" alt=""/>
             </span>
          </button>
-      </div><!-- /.modal-dialog -->
-   </div><!-- /.modal -->
+      </div>
+      <!-- /.modal-dialog -->
+   </div>
+   <!-- /.modal -->
    <div class="pager">
       <a href="###"><</a>
       <a ng-repeat="p in pager" ng-click="changePageIndex(p)" ng-class="{'active':p==pageIndex}" ng-bind="p"></a>
@@ -198,12 +203,17 @@
 <!--  end news  -->
 
 <section class="container-fluid transit">
-   <div class="row">
-      <img class="img-responsive" src="img/banner2.jpg" alt=""/>
-   </div>
-   <div class="text-content">
-      <div class="cn">诚信，是博观的生存之本；</div>
-      <div class="cn">共赢，是博观的绝胜之道。</div>
+   <div class="row search-bg">
+      <div class="container">
+         <div class="title">时尚简约</div>
+         <div class="text">
+            <div class="en">Integrity is the survival of the Bo Guan.quality is the root of the development of the BoGuan. win,  is the way of Bo Guan.</div>
+            <div class="cn">——诚信，博观生存之本；品质，博观发展之根；共赢，博观绝胜之道。</div>
+         </div>
+         <div class="img">
+            <img class="img-responsive" src="./img/bg_bg.png" alt=""/>
+         </div>
+      </div>
    </div>
 </section>
 <!--  end ad-2  -->
@@ -220,7 +230,8 @@
                   <img src="uploads/team/t1.jpg" alt="Image-3">
                </div>
                <div class="text-desc">
-                  <h3>刘  涛</h3>
+                  <h3>刘 涛</h3>
+
                   <p>网页设计师</p>
                </div>
             </div>
@@ -231,7 +242,8 @@
                   <img src="uploads/team/t2.jpg" alt="Image-3">
                </div>
                <div class="text-desc">
-                  <h3>曾  祥</h3>
+                  <h3>曾 祥</h3>
+
                   <p>三维动画师</p>
                </div>
             </div>
@@ -243,6 +255,7 @@
                </div>
                <div class="text-desc">
                   <h3>黄禹铜</h3>
+
                   <p>二维动画师</p>
                </div>
             </div>
@@ -254,6 +267,7 @@
                </div>
                <div class="text-desc">
                   <h3>陈昭圣</h3>
+
                   <p>原画设计师</p>
                </div>
             </div>
@@ -265,6 +279,7 @@
                </div>
                <div class="text-desc">
                   <h3>蒙锦慧</h3>
+
                   <p>插画师</p>
                </div>
             </div>
@@ -276,6 +291,7 @@
                </div>
                <div class="text-desc">
                   <h3>杨世江</h3>
+
                   <p>二维动画师</p>
                </div>
             </div>
@@ -298,224 +314,100 @@
    </div>
    <div class="tabs-warp">
       <!-- Nav tabs -->
-      <ul class="tab-items clearfix" role="tablist">
-         <li role="presentation" class="item active"><a href="#tab_flash" aria-controls="tab_flash" role="tab"
-                                                        data-toggle="tab">动画</a></li>
-         <li role="presentation" class="item"><a href="#tab_video" aria-controls="tab_video" role="tab"
-                                                 data-toggle="tab">影视</a></li>
-         <li role="presentation" class="item"><a href="#tab_apps" aria-controls="tab_apps" role="tab" data-toggle="tab">APP制作</a>
-         </li>
-         <li role="presentation" class="item"><a href="#tab_web" aria-controls="tab_web" role="tab" data-toggle="tab">网站建设</a>
-         </li>
-      </ul>
-
+      <div class="row">
+         <ul class="tab-items clearfix" role="tablist">
+            <li role="presentation" class="item active">
+               <a href="#tab_flash" aria-controls="tab_flash" role="tab" data-toggle="tab">
+                  <i class="iconfont">&#xe65c;</i>
+                  <span>动画</span>
+               </a>
+            </li>
+            <li role="presentation" class="item">
+               <a href="#tab_video" aria-controls="tab_video" role="tab" data-toggle="tab">
+                  <i class="iconfont">&#xe634;</i>
+                  <span>影视</span>
+               </a>
+            </li>
+            <li role="presentation" class="item"><a href="#tab_apps" aria-controls="tab_apps" role="tab" data-toggle="tab">
+               <i class="iconfont">&#xe601;</i>
+               <span>APP制作</span>
+               </a>
+            </li>
+            <li role="presentation" class="item"><a href="#tab_web" aria-controls="tab_web" role="tab" data-toggle="tab">
+               <i class="iconfont">&#xe717;</i>
+               <span>网站建设</span>
+               </a>
+            </li>
+            <li role="presentation" class="item"><a href="#tab_tour" aria-controls="tab_tour" role="tab" data-toggle="tab">
+               <i class="iconfont">&#xe609;</i>
+               <span>旅游产品</span>
+               </a>
+            </li>
+         </ul>
+      </div>
       <!-- Tab panes -->
       <div class="tab-content">
          <div role="tabpanel" class="tab-pane active" id="tab_flash">
-            <div class="case-box clearfix">
-               <div class="item large-item">
-                  <div class="pic"><img src="uploads/case/flash/DH_01.jpg" alt=""/></div>
-                  <div class="txt">国家安全公益动画广告</div>
+            <div class="row flash-list">
+               <div class="col-md-4 col-sm-4">
+                  <div class="items">
+                     <a><img class="lazy" src="uploads/case/flash/flash_01.jpg"></a>
+                     <div class="caption">
+                        <h3><a>立正，看齐，做个合格党员</a></h3>
+                        <div class="txt">通过生动的动画形式来传达“学习共产党党章党规；学习贯彻习近平总书记系列重要讲话精神；做合格党员”的思想。“两学一做”学习教育有利于夯实执政基础;有利于激活党员细胞;有利于强化基层堡垒。动画主题曲极具特色的动感节奏，音乐清新明亮，歌词朗朗上口，颇有复古神曲的风范，是新一代党思想“神曲“。</div>
+                     </div>
+                  </div>
                </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_02.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之溺水</div>
+               <div class="col-md-4 col-sm-4">
+                  <div class="items">
+                     <a><img class="lazy" src="uploads/case/flash/flash_02.jpg"></a>
+                     <div class="caption">
+                        <h3><a>4.15 全民国家安全教育日</a></h3>
+                        <div class="txt">动画片通过描述政治、国土、经济、社会、资源、网络等重点领域国家安全政策，传播国家安全方面的知识。强化全民责任意识，提高维护国家安全的能力。维护国家安全是每个公民应尽的义务，通过动画片的宣传形式，可以短时间内起到良好效果，让更多的社会公众接触和了解到国家安全方面的法律知识，特别是懂得如何依法履行自身的维护国家安全方面的职责和义务。</div>
+                     </div>
+                  </div>
                </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_03.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之预防火灾</div>
+               <div class="col-md-4 col-sm-4">
+                  <div class="items small">
+                     <a><img class="lazy" src="uploads/case/flash/flash_03.jpg"></a>
+                     <div class="link">
+                        <a href="">MORE</a>
+                     </div>
+                  </div>
                </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_04.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之暴力事件</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_05.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之防拐</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_06.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之交通安全</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_07.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之反恐事件</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_08.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之大声喧哗</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_09.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之不造谣</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_10.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之不占座</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_11.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之教室吃东西</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_12.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之教学区不骑车</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_13.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之民主选举</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_14.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之文明离校</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_15.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之为他人考虑</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_16.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之杜绝浪费</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_13.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之杜绝浪费</div>
+               <div class="col-md-4 col-sm-4">
+                  <div class="items small">
+                     <a><img class="lazy" src="uploads/case/flash/flash_04.jpg"></a>
+                     <div class="link">
+                        <a href="">MORE</a>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
          <div role="tabpanel" class="tab-pane" id="tab_video">
-            <div class="case-box clearfix">
-               <div class="item large-item">
-                  <div class="pic"><img id="large-pic" src="uploads/case/flash/DH_01.jpg" alt=""/></div>
-                  <div class="txt">国家安全公益动画广告</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_02.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之溺水</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_03.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之预防火灾</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_04.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之暴力事件</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_05.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之防拐</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_06.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之交通安全</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_07.jpg" alt=""/></div>
-                  <div class="txt">广西校园安全教育系列动画之反恐事件</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_08.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之大声喧哗</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_09.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之不造谣</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_10.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之不占座</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_11.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之教室吃东西</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_12.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之教学区不骑车</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_13.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之民主选举</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_14.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之文明离校</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_15.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之为他人考虑</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_16.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之杜绝浪费</div>
-               </div>
-               <div class="item">
-                  <div class="pic"><img src="uploads/case/flash/DH_13.jpg" alt=""/></div>
-                  <div class="txt">广西文明建设系列动画之杜绝浪费</div>
+            <div class="row">
+               <div class="col-md-4 col-sm-6" ng-repeat="v in cases.videos">
+                  <div class="thumbnail">
+                     <a><img class="lazy" ng-src="uploads/case/video/TV_0{{v.id}}.jpg"></a>
+
+                     <div class="caption">
+                        <a ng-click="showCase(web)" class="link-text" ng-bind="v.title"></a>
+                        <a ng-click="showCase(web)" class="link-btn">详情</a>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
          <div role="tabpanel" class="tab-pane" id="tab_apps">
             <div class="row">
-               <div class="tab-warp">
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/app/1.jpg"></a>
+               <div class="col-md-4 col-sm-6" ng-repeat="app in cases.apps">
+                  <div class="thumbnail">
+                     <a><img class="lazy" ng-src="uploads/case/app/APP_0{{app.id}}.jpg"></a>
 
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人学生版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/app/2.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人教师版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/app/3.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">生活类APP--福环</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/app/3.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">生活类APP--福环</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/app/2.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人教师版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/app/1.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人学生版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
+                     <div class="caption">
+                        <a ng-click="showCase(app)" class="link-text" ng-bind="app.title"></a>
+                        <a ng-click="showCase(app)" class="link-btn">详情</a>
                      </div>
                   </div>
                </div>
@@ -523,70 +415,47 @@
          </div>
          <div role="tabpanel" class="tab-pane" id="tab_web">
             <div class="row">
-               <div class="tab-warp">
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/web/WEB_01.jpg"></a>
+               <div class="col-md-4 col-sm-6" ng-repeat="web in cases.webs">
+                  <div class="thumbnail">
+                     <a><img class="lazy" ng-src="uploads/case/web/WEB_0{{web.id}}.jpg"></a>
 
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人学生版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/web/WEB_02.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人教师版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/web/WEB_03.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">生活类APP--福环</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/web/WEB_04.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">生活类APP--福环</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/web/WEB_05.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人教师版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <div class="thumbnail">
-                        <a><img class="lazy" src="uploads/case/web/WEB_06.jpg"></a>
-
-                        <div class="caption">
-                           <a href="###" class="link-text">学习类APP--考学超人学生版</a>
-                           <a href="#" class="link-btn">查看</a>
-                        </div>
+                     <div class="caption">
+                        <a ng-click="showCase(web)" class="link-text" ng-bind="web.title"></a>
+                        <a ng-click="showCase(web)" class="link-btn">详情</a>
                      </div>
                   </div>
                </div>
             </div>
          </div>
+         <div role="tabpanel" class="tab-pane" id="tab_tour">
+            <div class="row">
+               <div class="col-md-4 col-sm-6" ng-repeat="t in cases.tours">
+                  <div class="thumbnail">
+                     <a><img class="lazy" ng-src="uploads/case/video/TV_0{{t.id}}.jpg"></a>
+                     <div class="caption">
+                        <a ng-click="showCase(web)" class="link-text" ng-bind="t.title"></a>
+                        <a ng-click="showCase(web)" class="link-btn">详情</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="modal fade" id="CaseModal" data-backdrop="false">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                  {{nowCase}}
+                  <img ng-src="" alt=""/>
+               </div>
+               <!-- /.modal-content -->
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+               <img src="./img/close_pic.png" alt=""/>
+            </span>
+               </button>
+            </div>
+            <!-- /.modal-dialog -->
+         </div>
+         <!-- /.modal -->
       </div>
    </div>
 </section>
@@ -634,12 +503,31 @@
                <textarea rows="6" placeholder="您的留言"></textarea>
             </div>
             <div class="col-md-12 submit-btn">
-               <button type="button">发送</button>
+               <button type="button">发    送</button>
             </div>
          </div>
       </div>
    </div>
 </section>
+
+<footer>
+   <div class="container">
+      <div class="footer-nav">
+         <a href="">网站首页</a><span>|</span>
+         <a href="">关于博观</a><span>|</span>
+         <a href="">公司动态</a><span>|</span>
+         <a href="">团队成员</a><span>|</span>
+         <a href="">业务案例</a><span>|</span>
+         <a href="">联系我们</a>
+      </div>
+      <div class="copyright">
+         <p>版权所有 2016 桂林博观文化传播有限公司</p>
+         <p>Copyright © 2016 桂林博观文化传播有限公司</p>
+         <p>【关注微信号】</p>
+         <p><img src="./img/WeChat.jpg" alt=""/></p>
+      </div>
+   </div>
+</footer>
 
 <script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
@@ -647,10 +535,10 @@
 <script type="text/javascript">
    jQuery(function ($) {
       $(document).ready(function () {
-         $(".menuItem").click(function() {
+         $(".menuItem").click(function () {
             $("html, body").animate({
                scrollTop: $($(this).find('a').attr("href")).offset().top
-            },1000);
+            }, 1000);
             return false;
          });
          $('.navbar-wrapper').stickUp({
@@ -675,16 +563,16 @@
          });
          var video = document.getElementById("video");
          var fix_video = document.getElementById("fix_video");
-         $('#play').click(function(){
+         $('#play').click(function () {
             video.pause();
             $('.fix-top').hide();
             $('.banner-detail').hide();
             $('.video2').show();
-            setTimeout(function(){
+            setTimeout(function () {
                fix_video.play();
-            },100);
+            }, 100);
          });
-         $('#close_video').click(function(){
+         $('#close_video').click(function () {
             video.play();
             $('.fix-top').show();
             $('.banner-detail').show();
@@ -692,9 +580,9 @@
             fix_video.pause();
          });
 
-         $(window).bind("scroll", function(event){
+         $(window).bind("scroll", function (event) {
             //窗口的高度+看不见的顶部的高度=屏幕低部距离最顶部的高度
-            var thisButtomTop = parseInt($(window).height()) + parseInt($(window).scrollTop())-200;
+            var thisButtomTop = parseInt($(window).height()) + parseInt($(window).scrollTop()) - 200;
             var thisTop = parseInt($(window).scrollTop()); //屏幕顶部距离最顶部的高度
             var PictureTop = parseInt($(".text-content").eq(0).offset().top);
             if (PictureTop >= thisTop && PictureTop <= thisButtomTop) {
@@ -722,13 +610,13 @@
 <script src="js/angular.min.js"></script>
 <script type="text/javascript">
    angular.module('myApp', [])
-       .controller('myController', function ($scope,$window,$timeout) {
+       .controller('myController', function ($scope, $window, $timeout) {
           $scope.news = [
              {
                 title: '“全民国家安全教育日”公益宣传片在广西卫视黄金时段播出',
                 time: '2016-04-15',
                 content: "2016年4月15日是首个全民国家安全教育日，通过宣传片来介绍国家安全的概念以及确立全国国家安全教育日的意义，提高政府宣传工作效率。<br\>面对即将到来的首个全民国家安全教育日，于我们各级党委和领导干部而言，就是要深刻领会和把握总体国家安全观的重大意义和精神实质，以守土有责、守土负责、守土尽责的责任担当把总体国家安全观落到实处，以高度的思想自觉和行动自觉担负起维护国家安全的使命。于我们每个公民而言，就是要深入了解和掌握总体国家安全观的主要内涵和基本要求，自觉做国家安全的模范遵守者和坚决捍卫者，既确保自己一切言行都在遵纪守法、利国利民的轨道上运行，也对一切破坏和损害国家安全的现象和行为给予旗帜鲜明的反对、毫不含糊的抵制。人人投身其中，就必能筑起国家安全牢不可破的铜墙铁壁。",
-                feedImg: '/1/n_1',
+                feedimg: '/1/n_1',
                 newImgs: [
                    {
                       thumb: '/1/pic1_1-1',
@@ -748,7 +636,7 @@
                 title: '“航天英雄——杨利伟”动画片片头制作完成',
                 time: '2016-04-10',
                 content: '杨利伟是中国进入太空的第一人。他是中国培养的第一代航天员，在中共十七大上当选为中央候补委员。杨利伟在原空军部队安全飞行1,350小时之久。2003年10月15日北京时间9时，杨利伟乘由长征二号F火箭运载的神舟五号飞船首次进入太空，象征着中国太空事业向前迈进一大步，起到了里程碑的作用。杨利伟是中国进入太空的第一人。2003年10月15日北京时间9时，杨利伟乘由长征二号F火箭运载的神舟五号飞船首次进入太空,象征着中国太空事业向前迈进一大步，起到了里程碑的作用。2016年4月10日，桂林博观文化传播有限公司根据杨利伟先生的自传《天地九重》中提到的一些回忆，组织重新编写出他选飞之前的故事，调整故事脉络，提取出关键情节，加入些情节使故事合理化，内容情节流畅自然。现已完成“航天英雄杨利伟”动画片头制作，经过数月的时间终于制作完成成片。团队成员都很激动，对于桂林博观文化传播有限公司来说这是一个良好的开端，以后的发展必定越来越好，公司的项目越来越多，越来越大。',
-                feedImg: '/2/n_2',
+                feedimg: '/2/n_2',
                 newImgs: [
                    {
                       thumb: '/2/pic2_1-1',
@@ -768,7 +656,7 @@
                 title: '“考学超人”APP&PC端制作完成',
                 time: '2016-02-12',
                 content: '“考学超人”是一款课堂型应用，能够提供比较全面、系统的课程和学习场景。在课程设置上拥有较全面的专业、学科类目，在功能上APP都以在线教育PC端平台为基础，主要功能和课程设置也和PC端相似。“考学超人”APP分为学生版、教师版和家长版。学生版适合学生使用，主要是为了提高成绩或考试冲刺，海量题库，主要针对初高中生。学生版APP有金牌名师；中、高考模拟题、真题；学情诊断报告等模块。教师版APP适合老师使用，老师可以创建网络班级，可以在网络班级中进行管理，还能够及时布置作业，查看学生作业完成情况等等。家长版APP，方便家长及时了解自己的孩子练习情况，以及还可查看孩子的学情诊断报告等等功能。考学超人WEB端是进行学生、老师、家长身份验证的，身份信息验证后进入不同端的界面。总言而之，WEB端功能更齐全、强大。考学超人移动端产品即将上线，敬请期待！ ',
-                feedImg: '/3/n_3',
+                feedimg: '/3/n_3',
                 newImgs: [
                    {
                       thumb: '/3/pic3_1-1',
@@ -788,7 +676,7 @@
                 title: '“广西高校精神文明建设系列动画”制作启动',
                 time: '2015-11-06',
                 content: '校园文明建设是学校全面工作的重要组成部分，是学校综合实力的重要表现，与学校建设和发展息息相关。这是由校园文明建设的内涵和延伸取决的。建设一支高思想素质、高文化素质、讲文明、讲礼貌的师生队伍；建设一个充满生机与活力的学校管理机制。校园环境建设（包括校园绿化美化、环境卫生、校园治安）；学生学习环境（包括教室、图书馆、实验室、室外学习环境）；学生生活环境（包括食堂、宿舍、校舍维护）；校园文化建设（包括学生室内文化娱乐场所、学生社团活动）；宣传阵地建设（包括广播、电视、校报、宣传栏、阅报栏等设施建设和制度建设）；校训学风建设（包括校风学风培养、法制纪律教育、学生学习风貌、文明行为养成）。校园文明建设，包括物资文明建设和精神文明建设两大部分。所以，我们把校园文明建设作为推动高校建设和发展的系统工程是决不为过的。',
-                feedImg: '/4/n_4',
+                feedimg: '/4/n_4',
                 newImgs: [
                    {
                       thumb: '/4/pic4_1-1',
@@ -808,7 +696,7 @@
                 title: '“广西高校精神文明建设”公益广告制作完成',
                 time: '2015-11-28',
                 content: '校园文明建设是学校全面工作的重要组成部分，是学校综合实力的重要表现，与学校建设和发展息息相关。这是由校园文明建设的内涵和延伸取决的。建设一支高思想素质、高文化素质、讲文明、讲礼貌的师生队伍；建设一个充满生机与活力的学校管理机制。校园环境建设（包括校园绿化美化、环境卫生、校园治安）；学生学习环境（包括教室、图书馆、实验室、室外学习环境）；学生生活环境（包括食堂、宿舍、校舍维护）；校园文化建设（包括学生室内文化娱乐场所、学生社团活动）；宣传阵地建设（包括广播、电视、校报、宣传栏、阅报栏等设施建设和制度建设）；校训学风建设（包括校风学风培养、法制纪律教育、学生学习风貌、文明行为养成）。校园文明建设，包括物资文明建设和精神文明建设两大部分。所以，我们把校园文明建设作为推动高校建设和发展的系统工程是决不为过的。',
-                feedImg: '/5/n_5',
+                feedimg: '/5/n_5',
                 newImgs: [
                    {
                       thumb: '/5/pic5_1-1',
@@ -828,7 +716,7 @@
                 title: '“桂林电子科技大学55周年校庆”宣传片',
                 time: '2015-09-05',
                 content: '本宣传片主要介绍桂林电子科技大学历史沿革、办学条件、师资力量、学术研究、科研成果等相关信息。桂林电子科技大学座落在世界著名的风景游览城市和中国历史文化名城——广西壮族自治区桂林市，是工业和信息化部与广西壮族自治区共建高校、广西壮族自治区重点建设高校。中国绕月探测工程总设计师、国家最高科学技术奖获得者、中国科学院孙家栋院士为学校名誉校长。桂林电子科技大学图书馆始建于1960年，前身分别是桂林无线电专科学校图书馆和桂林电子工业学院图书馆。分为金鸡岭校区图书馆和花江校区图书馆，其中花江校区图书馆是我国高校单体建筑面积最大之一的图书馆，建筑面积4.5万余平方米。图书馆设有办公室、技术信息部、采编部、流通部、阅览部、花江校区管理部等业务部门。馆藏纸质图书174万册、电子图书 123万种、外文核心数据库26个、中文数据库45个、中外文期刊（含电子期刊）达19000多种。具有先进的网络信息平台，各类公共服务设施齐全。学校办学条件处于广西高校前列及国内同类院校先进水平等等。',
-                feedImg: '/6/n_6',
+                feedimg: '/6/n_6',
                 newImgs: [
                    {
                       thumb: '/6/pic6_1-1',
@@ -845,66 +733,161 @@
                 ]
              }
           ];
-          $scope.showNews = function(news){
+          $scope.showNews = function (news) {
              $scope.nowNews = news;
              $scope.focusIndex = 0;
              $('#NewsModal').modal();
           }
-          $scope.focus = function(n,index){
+          $scope.focus = function (n, index) {
              $scope.changeFocus = true;
-             $timeout(function(){
+             $timeout(function () {
                 $scope.changeFocus = false;
-             },500)
-            $scope.focusIndex = index;
+             }, 500)
+             $scope.focusIndex = index;
           }
 
-          $scope.getResize = function(){
+          $scope.getResize = function () {
              var width = $window.innerWidth;
-             if(width>=992){
+             if (width >= 992) {
                 $scope.pageSize = 4;
-             }else if(width<992 && width>768){
+             } else if (width < 992 && width > 768) {
                 $scope.pageSize = 3;
-             }else{
+             } else {
                 $scope.pageSize = 2;
              }
           }
           $scope.getResize();
 
           $scope.pageIndex = 1;
-          $scope.changePageIndex = function(i){
+          $scope.changePageIndex = function (i) {
              $scope.changeNews = true;
-             $timeout(function(){
+             $timeout(function () {
                 $scope.changeNews = false;
-             },500)
+             }, 500)
              $scope.pageIndex = i;
           }
-          $scope.$watch("pageIndex",function(nv,ov){
-             $scope.newsByPage = $scope.news.slice((nv-1)*$scope.pageSize,(nv-1)*$scope.pageSize+$scope.pageSize);
-             $scope.pager = $scope.pagerDesign($scope.news.length/$scope.pageSize);
+          $scope.$watch("pageIndex", function (nv, ov) {
+             $scope.newsByPage = $scope.news.slice((nv - 1) * $scope.pageSize, (nv - 1) * $scope.pageSize + $scope.pageSize);
+             $scope.pager = $scope.pagerDesign($scope.news.length / $scope.pageSize);
           });
-          $scope.$watch("pageSize",function(nv,ov){
+          $scope.$watch("pageSize", function (nv, ov) {
              $scope.pageIndex = 1;
-             $scope.newsByPage = $scope.news.slice(0,nv);
+             $scope.newsByPage = $scope.news.slice(0, nv);
           });
 
-          $scope.pagerDesign = function(val){
+          $scope.cases = {
+             flashs: [
+
+             ],
+             videos: [
+                {
+                   id:1,
+                   title:'学习类APP--考学超人学生版',
+                },
+                {
+                   id:2,
+                   title:'学习类APP--考学超人教师版',
+                },
+                {
+                   id:3,
+                   title:'生活类APP--福环',
+                },
+                {
+                   id:4,
+                   title:'生活类APP--福环',
+                },
+                {
+                   id:5,
+                   title:'学习类APP--考学超人教师版',
+                },
+                {
+                   id:6,
+                   title:'学习类APP--考学超人学生版',
+                }
+             ],
+             apps: [
+                {
+                   id:1,
+                   title:'学习类APP--考学超人学生版',
+                },
+                {
+                   id:2,
+                   title:'学习类APP--考学超人教师版',
+                },
+                {
+                   id:3,
+                   title:'生活类APP--福环',
+                },
+                {
+                   id:4,
+                   title:'生活类APP--福环',
+                },
+                {
+                   id:5,
+                   title:'学习类APP--考学超人教师版',
+                },
+                {
+                   id:6,
+                   title:'学习类APP--考学超人学生版',
+                }
+             ],
+             webs: [
+                {
+                   id:1,
+                   title:'学习类APP--考学超人学生版',
+                },
+                {
+                   id:2,
+                   title:'学习类APP--考学超人教师版',
+                },
+                {
+                   id:3,
+                   title:'生活类APP--福环',
+                },
+                {
+                   id:4,
+                   title:'生活类APP--福环',
+                },
+                {
+                   id:5,
+                   title:'学习类APP--考学超人教师版',
+                },
+                {
+                   id:6,
+                   title:'学习类APP--考学超人学生版',
+                }
+             ],
+             tours: [
+                {
+                   id:1,
+                   title:'学习类APP--考学超人学生版',
+                }
+             ]
+          };
+
+          $scope.showCase = function(model){
+             $scope.nowCase = model;
+             $('#CaseModal').modal();
+          }
+
+          $scope.pagerDesign = function (val) {
              var arr = [];
-             for(var i=0;i<val;i++){
-                arr.push(i+1);
+             for (var i = 0; i < val; i++) {
+                arr.push(i + 1);
              }
              return arr;
           }
 
-          angular.element($window).bind('resize', function(){
+          angular.element($window).bind('resize', function () {
              $scope.getResize();
              $scope.$apply();
           });
        })
-      .filter('toStrusted', function ($sce) {
-         return function (html) {
-            return $sce.trustAsHtml(html);
-         }
-      });
+       .filter('toStrusted', function ($sce) {
+          return function (html) {
+             return $sce.trustAsHtml(html);
+          }
+       });
 </script>
 </body>
 
