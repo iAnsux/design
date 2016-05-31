@@ -9,9 +9,45 @@
    <link rel="stylesheet" href="css/bootstrap.css">
    <link rel="stylesheet" href="css/bs.css">
    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+   <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+   <script src="index.js"></script>
+   <script>
+      var canvas, stage, exportRoot;
+      function init() {
+         // --- write your JS code here ---
+
+         canvas = document.getElementById("canvas");
+         images = images||{};
+         ss = ss||{};
+
+         var loader = new createjs.LoadQueue(false);
+         loader.addEventListener("fileload", handleFileLoad);
+         loader.addEventListener("complete", handleComplete);
+         loader.loadFile({src:"images/index_atlas_.json", type:"spritesheet", id:"index_atlas_"}, true);
+         loader.loadManifest(lib.properties.manifest);
+      }
+
+      function handleFileLoad(evt) {
+         if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+      }
+
+      function handleComplete(evt) {
+         var queue = evt.target;
+         ss["index_atlas_"] = queue.getResult("index_atlas_");
+         exportRoot = new lib.Html5();
+
+         stage = new createjs.Stage(canvas);
+         stage.addChild(exportRoot);
+         stage.update();
+
+         createjs.Ticker.setFPS(lib.properties.fps);
+         createjs.Ticker.addEventListener("tick", stage);
+      }
+
+   </script>
 </head>
 
-<body ng-app="myApp" ng-controller="myController">
+<body ng-app="myApp" ng-controller="myController" onload="init();">
 
 <section id="home"></section>
 
@@ -303,7 +339,7 @@
 
 <section class="container-fluid transit" style="margin-top: 0px;">
    <div class="row">
-      <video id="aaa" src="uploads/thinking5.mp4" width="100%" loop autoplay></video>
+      <canvas id="canvas" width="1920" height="560" style="background-color:#FFFFFF"></canvas>
    </div>
 </section>
 <!--  end idea  -->
@@ -348,16 +384,20 @@
       <!-- Tab panes -->
       <div class="tab-content">
          <div role="tabpanel" class="tab-pane active" id="tab_flash">
-            <div class="row flash-list">
-               <div class="col-md-4 col-sm-4">
-                  <div class="items">
-                     <a><img class="lazy" src="uploads/case/flash/flash_01.jpg"></a>
-                     <div class="caption">
-                        <h3><a>立正，看齐，做个合格党员</a></h3>
-                        <div class="txt">通过生动的动画形式来传达“学习共产党党章党规；学习贯彻习近平总书记系列重要讲话精神；做合格党员”的思想。“两学一做”学习教育有利于夯实执政基础;有利于激活党员细胞;有利于强化基层堡垒。动画主题曲极具特色的动感节奏，音乐清新明亮，歌词朗朗上口，颇有复古神曲的风范，是新一代党思想“神曲“。</div>
+            <div class="row flash-list" ng-if="!showChildSection">
+               <div class="col-md-4 col-sm-4" ng-repeat="flash in cases.flashs">
+                  <div class="items" ng-class="{'small':flash.child!=undefined}">
+                     <a><img class="lazy" ng-src="uploads/case/flash/flash_0{{flash.id}}.jpg"></a>
+                     <div class="caption" ng-if="flash.child==undefined">
+                        <h3><a ng-bind="flash.title"></a></h3>
+                        <div class="txt" ng-bind="flash.content"></div>
+                     </div>
+                     <div class="link" ng-if="flash.child!=undefined">
+                        <a ng-click="showChild(flash)">MORE</a>
                      </div>
                   </div>
                </div>
+               <!--
                <div class="col-md-4 col-sm-4">
                   <div class="items">
                      <a><img class="lazy" src="uploads/case/flash/flash_02.jpg"></a>
@@ -381,6 +421,23 @@
                      <div class="link">
                         <a href="">MORE</a>
                      </div>
+                  </div>
+               </div>
+               -->
+            </div>
+            <div class="row chrild-flash" ng-if="showChildSection">
+               <div class="col-md-3 col-sm-4" ng-repeat="flash in childFlash.child">
+                  <div class="item">
+                     <a><img class="lazy" ng-src="uploads/case/flash/{{childFlash.name}}/0{{flash.id}}.jpg"></a>
+                     <div class="info">
+                        <a ng-click="showCase(flash)" class="link-title" ng-bind="flash.title"></a>
+                        <div class="desc" ng-bind="flash.desc"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-4">
+                  <div class="item">
+                     <a class="prev" ng-click="hideChild()">返回上一页</a>
                   </div>
                </div>
             </div>
@@ -463,12 +520,7 @@
 
 <section class="container-fluid" id="contact">
    <div class="sec-title">
-      <div class="line left"></div>
-      <div class="text">
-         <h2>联系我们</h2>
-         <span>CONTACT US</span>
-      </div>
-      <div class="line right"></div>
+      <img src="img/title_contact.png"/>
    </div>
    <div class="container">
       <div class="row">
@@ -513,12 +565,12 @@
 <footer>
    <div class="container">
       <div class="footer-nav">
-         <a href="">网站首页</a><span>|</span>
-         <a href="">关于博观</a><span>|</span>
-         <a href="">公司动态</a><span>|</span>
-         <a href="">团队成员</a><span>|</span>
-         <a href="">业务案例</a><span>|</span>
-         <a href="">联系我们</a>
+         <a href="#home">网站首页</a><span>|</span>
+         <a href="#abount">关于博观</a><span>|</span>
+         <a href="#news">公司动态</a><span>|</span>
+         <a href="#team">团队成员</a><span>|</span>
+         <a href="#case">业务案例</a><span>|</span>
+         <a href="#contact">联系我们</a>
       </div>
       <div class="copyright">
          <p>版权所有 2016 桂林博观文化传播有限公司</p>
@@ -541,6 +593,7 @@
             }, 1000);
             return false;
          });
+
          $('.navbar-wrapper').stickUp({
             parts: {
                0: 'home',
@@ -777,7 +830,88 @@
 
           $scope.cases = {
              flashs: [
-
+                {
+                   id: 1,
+                   title: '立正，看齐，做个合格党员',
+                   content: '通过生动的动画形式来传达“学习共产党党章党规；学习贯彻习近平总书记系列重要讲话精神；做合格党员”的思想。“两学一做”学习教育有利于夯实执政基础;有利于激活党员细胞;有利于强化基层堡垒。动画主题曲极具特色的动感节奏，音乐清新明亮，歌词朗朗上口，颇有复古神曲的风范，是新一代党思想“神曲“。'
+                },
+                {
+                   id: 2,
+                   title: '4.15 全民国家安全教育日',
+                   content: '动画片通过描述政治、国土、经济、社会、资源、网络等重点领域国家安全政策，传播国家安全方面的知识。强化全民责任意识，提高维护国家安全的能力。维护国家安全是每个公民应尽的义务，通过动画片的宣传形式，可以短时间内起到良好效果，让更多的社会公众接触和了解到国家安全方面的法律知识，特别是懂得如何依法履行自身的维'
+                },
+                {
+                   id: 3,
+                   name: 'anquan',
+                   title: '广西校园安全教育系列动画',
+                   content: '通过生动精简的情景剧和以一问一答的反问方式来展开“防火灾、防反暴恐应急措施、防敲诈勒索、交通安全、地震应急知识、暴力打人事件、防拐、防溺水”等安全主题故事；涵盖多个与中小学日程生活息息相关的最具代表性的各类安全知识点。适合中小学学生观看学习的安全教育资源片。',
+                   child: [
+                      {
+                         id: 1,
+                         title: '第一集',
+                         desc: '广西校园安全教育动画——溺水事故'
+                      },
+                      {
+                         id: 2,
+                         title: '第二集',
+                         desc: '广西校园安全教育动画——防拐'
+                      },
+                      {
+                         id: 3,
+                         title: '第三集',
+                         desc: '广西校园安全教育动画——防敲诈勒索'
+                      },
+                      {
+                         id: 4,
+                         title: '第四集',
+                         desc: '广西校园安全教育动画——防火灾'
+                      },
+                      {
+                         id: 5,
+                         title: '第五集',
+                         desc: '广西校园安全教育动画——防暴恐'
+                      },
+                      {
+                         id: 6,
+                         title: '第六集',
+                         desc: '广西校园安全教育动画——暴力打人'
+                      },
+                      {
+                         id: 7,
+                         title: '第七集',
+                         desc: '广西校园安全教育动画——地震应急知识'
+                      }
+                   ]
+                },
+                {
+                   id: 4,
+                   name: 'jingshen',
+                   title: '广西高校精神文明建设系列动画',
+                   content: '本系列动画剧情多为大学校园里常见的不文明现象。常见现象如在教室占座；考试时趁老师不注意，偷偷拿手机作弊，同学提醒还无动于衷；在教学区里快速的骑行；选班干部时，用物质条件交换票数等多种不文明行为。通过制作一系列动画来引起学生的共鸣，传达正能量。等。',
+                   child: [
+                      {
+                         id: 1,
+                      },
+                      {
+                         id: 2,
+                      },
+                      {
+                         id: 3,
+                      },
+                      {
+                         id: 4,
+                      },
+                      {
+                         id: 5,
+                      },
+                      {
+                         id: 6,
+                      },
+                      {
+                         id: 7,
+                      }
+                   ]
+                }
              ],
              videos: [
                 {
@@ -870,6 +1004,16 @@
              $('#CaseModal').modal();
           }
 
+          $scope.showChild = function(flash){
+             $scope.showChildSection = !$scope.showChildSection;
+             $scope.childFlash = flash;
+          }
+
+          $scope.hideChild = function(){
+             $scope.showChildSection = false;
+             $scope.childFlash = undefined;
+          }
+
           $scope.pagerDesign = function (val) {
              var arr = [];
              for (var i = 0; i < val; i++) {
@@ -889,6 +1033,7 @@
           }
        });
 </script>
+
 </body>
 
 </html>

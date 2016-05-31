@@ -136,7 +136,7 @@ header {
 }
 
 .about {
-  margin-top: 85px;
+  padding-top: 60px;
   margin-bottom: 85px;
 }
 
@@ -242,8 +242,6 @@ header {
 }
 
 .transit {
-  margin-top: 50px;
-  margin-bottom: 50px;
   position: relative;
 }
 
@@ -347,7 +345,9 @@ header {
   color: #ED6B1A;
   text-decoration: none;
 }
-
+#news{
+  padding-top: 60px;
+}
 .news .link-btn {
   display: block;
   color: #323232;
@@ -573,7 +573,9 @@ header {
   transition-delay: 0.05s;
 }
 */
-
+#team,#case{
+  padding-top: 60px;
+}
 /* effect-6 css */
 .team .thumbnail {
   height: auto;
@@ -952,20 +954,43 @@ header {
 }
 #tab_flash .small .link a{
   display: inline-block;
-  background: #fe7e17;
+  background: #d7d7d7;
   border-radius: 5px;
   padding: 8px 25px;
   font-size: 18px;
-  color: #fff;
+  color: #323232;
   margin-top: 45px;
   text-decoration: none;
 }
+#tab_flash .small .link a:hover{
+  background: #fe7e17;
+  color: #FFF;
+}
+
 #tab_flash .items h3 a{
   font-size: 18px;
   color: #fe7e17;
 }
-.case-box .large-item .txt {
-  font-size: 26px;
+
+.chrild-flash .item{
+  position: relative;
+  border: solid 1px #d7d7d7;
+  margin-bottom: 20px;
+}
+.chrild-flash .transparent{
+  opacity: 0;
+}
+.chrild-flash .info{
+  height: 48px;
+  overflow: hidden;
+  padding: 5px 10px;
+  color: #686868;
+}
+.chrild-flash .info a{
+  color: #686868;
+}
+.chrild-flash .item img{
+  width: 100%;
 }
 
 .tab-content {
@@ -986,10 +1011,12 @@ header {
 #contact .text {
   color: #FFFFFF;
 }
-
+#contact .container{
+  padding-bottom: 30px;
+}
 #contact input {
   width: 100%;
-  padding: 5px;
+  padding: 8px 10px;
   border: solid 2px #eee;
   outline: none;
   background: none;
@@ -1021,15 +1048,15 @@ header {
 }
 .submit-btn {
   text-align: right;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .submit-btn button {
   border: solid 2px #eee;
   outline: none;
-  font-size: 16px;
+  font-size: 20px;
   background: none;
-  padding: 8px 30px;
+  padding: 15px 40px;;
 }
 
 .circle {
@@ -1041,18 +1068,18 @@ header {
 
 .cu-line {
   position: relative;
-  padding: 10px 0;
+  padding-bottom: 30px;
 }
 
 .cu-line .circle {
   position: absolute;
-  top: 50%;
-  transform: translate(0px, -50%);
+  top: 18%;
+  transform: translate(0px, -18%);
 }
 
 .cu-line .text {
   letter-spacing: 3px;
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 30px;
 }
 
@@ -1169,6 +1196,9 @@ header {
 
 }
 
+#contact{
+  padding-top: 80px;
+}
 footer{
   background: #353535;
   color: #fff;
@@ -1183,11 +1213,11 @@ footer .footer-nav{
 footer .footer-nav a{
   display: inline-block;
   font-size: 18px;
-  color: #fff;
+  color: #A9A9A9;
   text-decoration: none;
 }
 footer .footer-nav a:hover{
-  color: #fe7e17;
+  color: #d7d7d7;
 }
 footer .footer-nav span{
   display: inline-block;
@@ -1197,6 +1227,6 @@ footer .footer-nav span{
 footer .copyright{
   text-align: center;
   font-size: 16px;
-  color: #A9A9A9;
+  color: #686868;
   margin-bottom: 60px;
 }
