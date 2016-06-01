@@ -9,42 +9,6 @@
    <link rel="stylesheet" href="css/bootstrap.css">
    <link rel="stylesheet" href="css/bs.css">
    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-   <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-   <script src="index.js"></script>
-   <script>
-      var canvas, stage, exportRoot;
-      function init() {
-         // --- write your JS code here ---
-
-         canvas = document.getElementById("canvas");
-         images = images||{};
-         ss = ss||{};
-
-         var loader = new createjs.LoadQueue(false);
-         loader.addEventListener("fileload", handleFileLoad);
-         loader.addEventListener("complete", handleComplete);
-         loader.loadFile({src:"images/index_atlas_.json", type:"spritesheet", id:"index_atlas_"}, true);
-         loader.loadManifest(lib.properties.manifest);
-      }
-
-      function handleFileLoad(evt) {
-         if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
-      }
-
-      function handleComplete(evt) {
-         var queue = evt.target;
-         ss["index_atlas_"] = queue.getResult("index_atlas_");
-         exportRoot = new lib.Html5();
-
-         stage = new createjs.Stage(canvas);
-         stage.addChild(exportRoot);
-         stage.update();
-
-         createjs.Ticker.setFPS(lib.properties.fps);
-         createjs.Ticker.addEventListener("tick", stage);
-      }
-
-   </script>
 </head>
 
 <body ng-app="myApp" ng-controller="myController" onload="init();">
@@ -339,7 +303,7 @@
 
 <section class="container-fluid transit" style="margin-top: 0px;">
    <div class="row">
-      <canvas id="canvas" width="1920" height="560" style="background-color:#FFFFFF"></canvas>
+      <canvas id="canvas" style="background-color:#FFFFFF"></canvas>
    </div>
 </section>
 <!--  end idea  -->
@@ -387,7 +351,7 @@
             <div class="row flash-list" ng-if="!showChildSection">
                <div class="col-md-4 col-sm-4" ng-repeat="flash in cases.flashs">
                   <div class="items" ng-class="{'small':flash.child!=undefined}">
-                     <a><img class="lazy" ng-src="uploads/case/flash/flash_0{{flash.id}}.jpg"></a>
+                     <a><img class="lazy" ng-src="uploads/case/flash/{{flash.id}}.jpg"></a>
                      <div class="caption" ng-if="flash.child==undefined">
                         <h3><a ng-bind="flash.title"></a></h3>
                         <div class="txt" ng-bind="flash.content"></div>
@@ -428,17 +392,19 @@
             <div class="row chrild-flash" ng-if="showChildSection">
                <div class="col-md-3 col-sm-4" ng-repeat="flash in childFlash.child">
                   <div class="item">
-                     <a><img class="lazy" ng-src="uploads/case/flash/{{childFlash.name}}/0{{flash.id}}.jpg"></a>
+                     <a><img class="lazy" ng-src="uploads/case/flash/{{childFlash.name}}/{{flash.id}}.jpg"></a>
                      <div class="info">
-                        <a ng-click="showCase(flash)" class="link-title" ng-bind="flash.title"></a>
+                        <a ng-click="showCase(flash,'flash')" class="link-title" ng-bind="flash.title"></a>
                         <div class="desc" ng-bind="flash.desc"></div>
                      </div>
                   </div>
                </div>
                <div class="col-md-3 col-sm-4">
-                  <div class="item">
-                     <a class="prev" ng-click="hideChild()">返回上一页</a>
+                  <div class="item none">
+                     <a><img class="lazy" ng-src="uploads/case/flash/anquan/1.jpg"></a>
+                     <div class="info"></div>
                   </div>
+                  <a class="prev" ng-click="hideChild()">返回上一级>></a>
                </div>
             </div>
          </div>
@@ -446,11 +412,10 @@
             <div class="row">
                <div class="col-md-4 col-sm-6" ng-repeat="v in cases.videos">
                   <div class="thumbnail">
-                     <a><img class="lazy" ng-src="uploads/case/video/TV_0{{v.id}}.jpg"></a>
-
+                     <a><img class="lazy" ng-src="uploads/case/video/{{v.id}}.jpg"></a>
                      <div class="caption">
-                        <a ng-click="showCase(web)" class="link-text" ng-bind="v.title"></a>
-                        <a ng-click="showCase(web)" class="link-btn">详情</a>
+                        <a ng-click="showCase(v,'video')" class="link-text" ng-bind="v.title"></a>
+                        <a ng-click="showCase(v,'video')" class="link-btn">详情</a>
                      </div>
                   </div>
                </div>
@@ -460,11 +425,11 @@
             <div class="row">
                <div class="col-md-4 col-sm-6" ng-repeat="app in cases.apps">
                   <div class="thumbnail">
-                     <a><img class="lazy" ng-src="uploads/case/app/APP_0{{app.id}}.jpg"></a>
+                     <a><img class="lazy" ng-src="uploads/case/app/{{app.id}}.jpg"></a>
 
                      <div class="caption">
-                        <a ng-click="showCase(app)" class="link-text" ng-bind="app.title"></a>
-                        <a ng-click="showCase(app)" class="link-btn">详情</a>
+                        <a ng-click="showCase(app,'app')" class="link-text" ng-bind="app.title"></a>
+                        <a ng-click="showCase(app,'app')" class="link-btn">详情</a>
                      </div>
                   </div>
                </div>
@@ -474,11 +439,11 @@
             <div class="row">
                <div class="col-md-4 col-sm-6" ng-repeat="web in cases.webs">
                   <div class="thumbnail">
-                     <a><img class="lazy" ng-src="uploads/case/web/WEB_0{{web.id}}.jpg"></a>
+                     <a><img class="lazy" ng-src="uploads/case/web/{{web.id}}.jpg"></a>
 
                      <div class="caption">
-                        <a ng-click="showCase(web)" class="link-text" ng-bind="web.title"></a>
-                        <a ng-click="showCase(web)" class="link-btn">详情</a>
+                        <a ng-click="showCase(web,'web')" class="link-text" ng-bind="web.title"></a>
+                        <a ng-click="showCase(web,'web')" class="link-btn">详情</a>
                      </div>
                   </div>
                </div>
@@ -488,27 +453,24 @@
             <div class="row">
                <div class="col-md-4 col-sm-6" ng-repeat="t in cases.tours">
                   <div class="thumbnail">
-                     <a><img class="lazy" ng-src="uploads/case/video/TV_0{{t.id}}.jpg"></a>
+                     <a><img class="lazy" ng-src="uploads/case/tour/{{t.id}}.jpg"></a>
                      <div class="caption">
-                        <a ng-click="showCase(web)" class="link-text" ng-bind="t.title"></a>
-                        <a ng-click="showCase(web)" class="link-btn">详情</a>
+                        <a ng-click="showCase(t,'tour')" class="link-text" ng-bind="t.title"></a>
+                        <a ng-click="showCase(t,'tour')" class="link-btn">详情</a>
                      </div>
                   </div>
                </div>
             </div>
          </div>
          <div class="modal fade" id="CaseModal" data-backdrop="false">
-            <div class="modal-dialog modal-lg">
-               <div class="modal-content">
-                  {{nowCase}}
-                  <img ng-src="" alt=""/>
-               </div>
+            <div class="modal-dialog modal-case">
                <!-- /.modal-content -->
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-               <img src="./img/close_pic.png" alt=""/>
-            </span>
+                  <span aria-hidden="true">&times;</span>
                </button>
+               <div class="modal-content">
+                  <img ng-src="uploads/case/{{nowCase.name}}/view_{{nowCase.model.id}}.jpg" alt=""/>
+               </div>
             </div>
             <!-- /.modal-dialog -->
          </div>
@@ -593,6 +555,15 @@
             }, 1000);
             return false;
          });
+
+         $(window).resize(resizeCanvas);
+         function resizeCanvas() {
+            var width = $(window).get(0).innerWidth;
+            $('#canvas').attr('width',width);
+            $('#canvas').attr('height',width*0.292);
+         };
+
+         resizeCanvas()
 
          $('.navbar-wrapper').stickUp({
             parts: {
@@ -942,66 +913,73 @@
              apps: [
                 {
                    id:1,
-                   title:'学习类APP--考学超人学生版',
+                   title:'考学超人学生版',
                 },
                 {
                    id:2,
-                   title:'学习类APP--考学超人教师版',
+                   title:'考学超人教师版',
                 },
                 {
                    id:3,
-                   title:'生活类APP--福环',
+                   title:'中国国电集团',
                 },
                 {
                    id:4,
-                   title:'生活类APP--福环',
+                   title:'CSMF-体育营销论坛',
                 },
                 {
                    id:5,
-                   title:'学习类APP--考学超人教师版',
+                   title:'味道锅饭',
                 },
                 {
                    id:6,
-                   title:'学习类APP--考学超人学生版',
+                   title:'福环',
                 }
              ],
              webs: [
                 {
                    id:1,
-                   title:'学习类APP--考学超人学生版',
+                   title:'考学超人',
                 },
                 {
                    id:2,
-                   title:'学习类APP--考学超人教师版',
+                   title:'气功网',
                 },
                 {
                    id:3,
-                   title:'生活类APP--福环',
+                   title:'桂电',
                 },
                 {
                    id:4,
-                   title:'生活类APP--福环',
+                   title:'广西招生考试网',
                 },
                 {
                    id:5,
-                   title:'学习类APP--考学超人教师版',
+                   title:'思政网',
                 },
                 {
                    id:6,
-                   title:'学习类APP--考学超人学生版',
+                   title:'凌云县沙里乡弄塘村党建信息化平台',
                 }
              ],
              tours: [
                 {
                    id:1,
-                   title:'学习类APP--考学超人学生版',
+                   title:'绘本周边产品',
                 }
              ]
           };
 
-          $scope.showCase = function(model){
-             $scope.nowCase = model;
-             $('#CaseModal').modal();
+          $scope.showCase = function(model,name){
+             $scope.nowCase = undefined;
+             $scope.nowCase = {
+               model: model,
+               name: name
+             };
+             console.log($scope.nowCase);
+             $timeout(function(){
+                $('#CaseModal').modal();
+             },10)
           }
 
           $scope.showChild = function(flash){
@@ -1034,6 +1012,56 @@
        });
 </script>
 
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="index.js"></script>
+<script>
+   var canvas, stage, exportRoot;
+   function init() {
+      // --- write your JS code here ---
+
+      canvas = document.getElementById("canvas");
+      images = images||{};
+      ss = ss||{};
+
+      var loader = new createjs.LoadQueue(false);
+      loader.addEventListener("fileload", handleFileLoad);
+      loader.addEventListener("complete", handleComplete);
+      loader.loadFile({src:"images/index_atlas_.json", type:"spritesheet", id:"index_atlas_"}, true);
+      loader.loadManifest(lib.properties.manifest);
+   }
+
+   function handleFileLoad(evt) {
+      if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+   }
+
+   function handleComplete(evt) {
+      var queue = evt.target;
+      ss["index_atlas_"] = queue.getResult("index_atlas_");
+      exportRoot = new lib.Html5();
+
+      stage = new createjs.Stage(canvas);
+      stage.addChild(exportRoot);
+      stage.update();
+
+      var width = $(window).get(0).innerWidth;
+      if(width == undefined){
+         width = 1920;
+      }
+
+      stage.scaleY = width/1920;
+      stage.scaleX = width/1920;
+
+      createjs.Ticker.setFPS(lib.properties.fps);
+      createjs.Ticker.addEventListener("tick", stage);
+   }
+
+   window.onresize = function() {
+      var width = $(window).get(0).innerWidth;
+      stage.scaleY = width/1920;
+      stage.scaleX = width/1920;
+   }
+
+</script>
 </body>
 
 </html>

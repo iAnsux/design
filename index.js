@@ -1073,7 +1073,7 @@ p.nominalBounds = new cjs.Rectangle(-122.5,-122.4,245.1,245);
 	var mask_graphics_0 = new cjs.Graphics().p("EhADgC5QAFgWAOgRQApgyB9ADMB9OAAAIAAHJMh9OAAAQh9gDgpAyIgBABQgNAQgFAWg");
 	var mask_graphics_390 = new cjs.Graphics().p("EhADgC5QAFgWAOgRQApgyB9ADMB9OAAAIAAHJMh9OAAAQh9gDgpAyIgBABQgNAQgFAWg");
 
-	this.timeline.addTween(cjs.Tween.get(mask).to({graphics:mask_graphics_0,x:1533.8,y:417.8}).wait(390).to({graphics:mask_graphics_390,x:1533.8,y:417.8}).wait(1));
+	this.timeline.addTween(cjs.Tween.get(mask).to({graphics:mask_graphics_0,x:1533.8,y:165.3}).wait(390).to({graphics:mask_graphics_390,x:1533.8,y:417.8}).wait(1));
 
 	// 传送带 复制
 	this.instance_22 = new lib.补间1("synched",0);
@@ -1086,10 +1086,10 @@ p.nominalBounds = new cjs.Rectangle(-122.5,-122.4,245.1,245);
 	// 遮罩 (mask)
 	var mask_1 = new cjs.Shape();
 	mask_1._off = true;
-	var mask_1_graphics_0 = new cjs.Graphics().p("EA/yADqIgBgBQgpgyh9ADMh9OAAAIAAnJMB9OAAAQB9gDApAyQAOARAFAWIAAHJQgFgVgNgRg");
+	var mask_1_graphics_0 = new cjs.Graphics().p("EA/yADqIgBgBQgpgyh9ADMh9OAAAIAAnJMB9OAAAQB9gDApAyQAOARAFAWIAAHJQgFgWgNgQg");
 	var mask_1_graphics_390 = new cjs.Graphics().p("EA/yADqIgBgBQgpgyh9ADMh9OAAAIAAnJMB9OAAAQB9gDApAyQAOARAFAWIAAHJQgFgVgNgRg");
 
-	this.timeline.addTween(cjs.Tween.get(mask_1).to({graphics:mask_1_graphics_0,x:381.9,y:419.9}).wait(390).to({graphics:mask_1_graphics_390,x:381.9,y:419.9}).wait(1));
+	this.timeline.addTween(cjs.Tween.get(mask_1).to({graphics:mask_1_graphics_0,x:381.9,y:165.3}).wait(390).to({graphics:mask_1_graphics_390,x:381.9,y:419.9}).wait(1));
 
 	// 传送带
 	this.instance_23 = new lib.补间1("synched",0);
