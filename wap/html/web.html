@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>我的微站</title>
     <meta charset="utf-8">
@@ -7,84 +8,89 @@
     <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui.css" />
     <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui-slide.css" />
     <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui-flex.css" />
-    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+
 </head>
+
 <body>
-<div id="aui-slide">
-    <div class="aui-slide-wrap" >
-        <div class="aui-slide-node bg-dark">
-            <img src="../image/carousel/carousel1.png" /> <div class="img-desc">
-                国家安全公益广告
+    <div id="aui-slide">
+        <div class="aui-slide-wrap">
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/carousel/carousel1.png" />
+                <div class="img-desc">
+                    国家安全公益广告
+                </div>
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/carousel/carousel2.png" />
+                <div class="img-desc">
+                    杨利伟动画片头
+                </div>
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/carousel/carousel3.png" />
+                <div class="img-desc">
+                    【广西高校精神文明建设系列动画】溺水故事
+                </div>
             </div>
         </div>
-        <div class="aui-slide-node bg-dark">
-            <img src="../image/carousel/carousel2.png" />
-            <div class="img-desc">
-                杨利伟动画片头
-            </div>
-        </div>
-        <div class="aui-slide-node bg-dark">
-            <img src="../image/carousel/carousel3.png" />
-            <div class="img-desc">
-                【广西高校精神文明建设系列动画】溺水故事
-            </div>
+        <div class="aui-slide-page-wrap">
+            <!--分页容器-->
         </div>
     </div>
-    <div class="aui-slide-page-wrap"><!--分页容器--></div>
-</div>
-<table class="tab-bar">
-    <tr>
-        <td width="20%">
-            <a href="animation.html">
-                <img class="icon" src="../image/icon/animation.png">
-                <div class="text">动画</div>
-            </a>
-        </td>
-        <td width="20%" >
-            <a href="movie.html">
-                <img class="icon" src="../image/icon/movie.png">
-                <div class="text">影视</div>
-            </a>
-        </td>
-        <td width="20%">
-            <a href="app.html">
-                <img class="icon" src="../image/icon/app.png">
-                <div class="text">APP</div>
-            </a>
-        </td>
-        <td width="20%">
-            <a href="web.html">
-                <img class="icon" src="../image/icon/web.png">
-                <div class="text">网站</div>
-            </a>
-        </td>
-        <td width="20%">
-            <a href="tour.html">
-                <img class="icon" src="../image/icon/tour.png">
-                <div class="text">旅游产品</div>
-            </a>
-        </td>
-    </tr>
-</table>
-<div class="content">
-    <a href="{:U('test/webdetail',array('bgimg'=>1))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/web_thumb/web_01.png" />
-            </div>
-            <div class="right">
-                <div class="title">【考学超人PC端】</div>
-                <div class="detail">
-                    考学超人PC端是集产品简介、学生端、老师端以及家
-                    长端的网站，可以帮助学生更好的提高学习成绩
+    <table class="tab-bar">
+        <tr>
+            <td width="20%">
+                <a href="animation.html">
+                    <i class="iconfont">&#xe65c;</i>
+                    <div class="text">动画</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a href="movie.html">
+                    <i class="iconfont">&#xe634;</i>
+                    <div class="text">影视</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a href="app.html">
+                    <i class="iconfont">&#xe601;</i>
+                    <div class="text">APP</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a class="active" href="web.html">
+                    <i class="iconfont">&#xe717;</i>
+                    <div class="text">网站</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a href="tour.html">
+                    <i class="iconfont">&#xe609;</i>
+                    <div class="text">旅游产品</div>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <div class="content">
+        <a href="webDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/web_thumb/web_01.png" />
                 </div>
-                <div style="clear:both;"></div>
+                <div class="right">
+                    <div class="title">【考学超人PC端】</div>
+                    <div class="detail">
+                        考学超人PC端是集产品简介、学生端、老师端以及家 长端的网站，可以帮助学生更好的提高学习成绩
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    
-    <!-- <div class="item">
+
+        <!-- <div class="item">
         <div class="left">
            <img src="../image/web_thumb/web_02.png" />
         </div>
@@ -97,95 +103,91 @@
             <div style="clear:both;"></div>
         </div>
     </div> -->
-    <a href="{:U('test/webdetail',array('bgimg'=>2))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/web_thumb/web_03.png" />
-            </div>
-            <div class="right">
-                <div class="title">【桂林电子科技大学】迎新报到管理系统</div>
-                <div class="detail">
-                    桂林电子科技大学——迎新报到管理系统，可实现学
-                    生信息、财务信息、宿舍信息、分班规划、班级信息
+        <a href="webDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/web_thumb/web_03.png" />
                 </div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-    </a>
-    <a href="{:U('test/webdetail',array('bgimg'=>3))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/web_thumb/web_04.png" />
-            </div>
-            <div class="right">
-                <div class="title">【中国医学气功网】</div>
-                <div class="detail">
-                    中国医学气功网包括学会简介、科学研究、培训教育
-                    政策法规、友亲链接以及下载专区几个模块
+                <div class="right">
+                    <div class="title">【桂林电子科技大学】迎新报到管理系统</div>
+                    <div class="detail">
+                        桂林电子科技大学——迎新报到管理系统，可实现学 生信息、财务信息、宿舍信息、分班规划、班级信息
+                    </div>
+                    <div style="clear:both;"></div>
                 </div>
-                <div style="clear:both;"></div>
             </div>
-        </div>
-    </a>
-    <a href="{:U('test/webdetail',array('bgimg'=>4))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/web_thumb/web_05.png" />
-            </div>
-            <div class="right">
-                <div class="title">【广西招生考试网】</div>
-                <div class="detail">
-                    西招生考试网包括首页、招考新闻、普通高考、研
-                    究生考试、成人高考、自学考试、大学英语四六级
+        </a>
+        <a href="webDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/web_thumb/web_04.png" />
                 </div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-    </a>
-    <a href="{:U('test/webdetail',array('bgimg'=>5))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/web_thumb/web_06.png" />
-            </div>
-            <div class="right">
-                <div class="title">【凌云县沙里乡弄塘村党建信息化平台】</div>
-                <div class="detail">
-                    凌云县沙里乡弄塘村党建信息化平台由平台首页、行
-                    政办公、党员管理、农村办事、党员服务、网络党校
+                <div class="right">
+                    <div class="title">【中国医学气功网】</div>
+                    <div class="detail">
+                        中国医学气功网包括学会简介、科学研究、培训教育 政策法规、友亲链接以及下载专区几个模块
+                    </div>
+                    <div style="clear:both;"></div>
                 </div>
-                <div style="clear:both;"></div>
             </div>
-        </div>
-    </a>
-    <a href="{:U('test/webdetail',array('bgimg'=>6))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/web_thumb/web_07.png" />
-            </div>
-            <div class="right">
-                <div class="title">【广西高校思政教育在线】</div>
-                <div class="detail">
-                    广西高校思政教育在线网站首页主要包括思政要闻、
-                    政策通知、高校风采、媒体高校、高校思政工作动态
+        </a>
+        <a href="webDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/web_thumb/web_05.png" />
                 </div>
-                <div style="clear:both;"></div>
+                <div class="right">
+                    <div class="title">【广西招生考试网】</div>
+                    <div class="detail">
+                        西招生考试网包括首页、招考新闻、普通高考、研 究生考试、成人高考、自学考试、大学英语四六级
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
             </div>
-        </div>
-    </a>
-</div>
+        </a>
+        <a href="webDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/web_thumb/web_06.png" />
+                </div>
+                <div class="right">
+                    <div class="title">【凌云县沙里乡弄塘村党建信息化平台】</div>
+                    <div class="detail">
+                        凌云县沙里乡弄塘村党建信息化平台由平台首页、行 政办公、党员管理、农村办事、党员服务、网络党校
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </a>
+        <a href="webDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/web_thumb/web_07.png" />
+                </div>
+                <div class="right">
+                    <div class="title">【广西高校思政教育在线】</div>
+                    <div class="detail">
+                        广西高校思政教育在线网站首页主要包括思政要闻、 政策通知、高校风采、媒体高校、高校思政工作动态
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </a>
+    </div>
 </body>
 <script type="text/javascript" src="../plugin/aui/script/aui-slide.js"></script>
 <script type="text/javascript">
     var slide = new auiSlide({
-        container:document.getElementById("aui-slide"),
+        container: document.getElementById("aui-slide"),
         //"width":300,
-        "height":160,
-        "speed":500,
-        "pageShow":true,
-        "pageStyle":'dot',
-        "loop":true,
+        "height": 160,
+        "speed": 500,
+        "pageShow": true,
+        "pageStyle": 'dot',
+        "loop": true,
         "autoPlay": 3000, //自动播放
-        'dotPosition':'center',
+        'dotPosition': 'center',
     })
 </script>
+
 </html>

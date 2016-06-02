@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>我的微站</title>
     <meta charset="utf-8">
@@ -7,215 +8,213 @@
     <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui.css" />
     <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui-slide.css" />
     <link rel="stylesheet" type="text/css" href="../plugin/aui/css/aui-flex.css" />
-    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+
 </head>
+
 <body>
-<div id="aui-slide">
-    <div class="aui-slide-wrap" >
-        <div class="aui-slide-node bg-dark">
-            <img src="../image/carousel/carousel1.png" /> <div class="img-desc">
-                国家安全公益广告
+    <div id="aui-slide">
+        <div class="aui-slide-wrap">
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/carousel/carousel1.png" />
+                <div class="img-desc">
+                    国家安全公益广告
+                </div>
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/carousel/carousel2.png" />
+                <div class="img-desc">
+                    杨利伟动画片头
+                </div>
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/carousel/carousel3.png" />
+                <div class="img-desc">
+                    【广西高校精神文明建设系列动画】溺水故事
+                </div>
             </div>
         </div>
-        <div class="aui-slide-node bg-dark">
-            <img src="../image/carousel/carousel2.png" />
-            <div class="img-desc">
-                杨利伟动画片头
-            </div>
-        </div>
-        <div class="aui-slide-node bg-dark">
-            <img src="../image/carousel/carousel3.png" />
-            <div class="img-desc">
-                【广西高校精神文明建设系列动画】溺水故事
-            </div>
+        <div class="aui-slide-page-wrap">
+            <!--分页容器-->
         </div>
     </div>
-    <div class="aui-slide-page-wrap"><!--分页容器--></div>
-</div>
-<table class="tab-bar">
-    <tr>
-        <td width="20%">
-            <a href="animation.html">
-                <img class="icon" src="../image/icon/animation.png">
-                <div class="text">动画</div>
-            </a>
-        </td>
-        <td width="20%" >
-            <a href="movie.html">
-                <img class="icon" src="../image/icon/movie.png">
-                <div class="text">影视</div>
-            </a>
-        </td>
-        <td width="20%">
-            <a href="app.html">
-                <img class="icon" src="../image/icon/app.png">
-                <div class="text">APP</div>
-            </a>
-        </td>
-        <td width="20%">
-            <a href="web.html">
-                <img class="icon" src="../image/icon/web.png">
-                <div class="text">网站</div>
-            </a>
-        </td>
-        <td width="20%">
-            <a href="tour.html">
-                <img class="icon" src="../image/icon/tour.png">
-                <div class="text">旅游产品</div>
-            </a>
-        </td>
-    </tr>
-</table>
-<div class="content">
-    <a href="{:U('test/appdetail',array('bgimg'=>1))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_01.png" />
-            </div>
-            <div class="right">
-                <div class="title">【考学超人APP】学生版</div>
-                <div class="detail">
-                    考学超人学生版APP是一款能够真正帮助到学生提高
-                    学习成绩的手机学习软件，初中高中各科典型新型题
+    <table class="tab-bar">
+        <tr>
+            <td width="20%">
+                <a href="animation.html">
+                    <i class="iconfont">&#xe65c;</i>
+                    <div class="text">动画</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a href="movie.html">
+                    <i class="iconfont">&#xe634;</i>
+                    <div class="text">影视</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a class="active" href="app.html">
+                    <i class="iconfont">&#xe601;</i>
+                    <div class="text">APP</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a href="web.html">
+                    <i class="iconfont">&#xe717;</i>
+                    <div class="text">网站</div>
+                </a>
+            </td>
+            <td width="20%">
+                <a href="tour.html">
+                    <i class="iconfont">&#xe609;</i>
+                    <div class="text">旅游产品</div>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <div class="content">
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_01.png" />
                 </div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>2))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_02.png" />
-            </div>
-            <div class="right">
-                <div class="title">【考学超人APP】教师版</div>
-                <div class="detail">
-                    考学超人教师版APP，支持老师利用资源题库对于学
-                    生布置课后作业，支持“1对1出题”和“统一出题”
+                <div class="right">
+                    <div class="title">【考学超人APP】学生版</div>
+                    <div class="detail">
+                        考学超人学生版APP是一款能够真正帮助到学生提高 学习成绩的手机学习软件，初中高中各科典型新型题
+                    </div>
+                    <div style="clear:both;"></div>
                 </div>
-                <div style="clear:both;"></div>
             </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>3))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_03.png" />
-            </div>
-            <div class="right">
-                <div class="title">【福环APP】</div>
-                <div class="detail">
-                    福环APP是一款生活记录软件，此款APP所配套的手
-                    环可以实时查看手环佩戴者的运动量、定位信息
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_02.png" />
                 </div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>4))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_04.png" />
-            </div>
-            <div class="right">
-                <div class="title">【中国国电集团APP】</div>
-                <div class="detail">
-                    中国国电集团APP，用户可随时随地的处理工作、通
-                    讯录、浏览信息通知、收发邮件、OA收发文、处理
+                <div class="right">
+                    <div class="title">【考学超人APP】教师版</div>
+                    <div class="detail">
+                        考学超人教师版APP，支持老师利用资源题库对于学 生布置课后作业，支持“1对1出题”和“统一出题”
+                    </div>
+                    <div style="clear:both;"></div>
                 </div>
-                <div style="clear:both;"></div>
             </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>5))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_05.png" />
-            </div>
-            <div class="right">
-                <div class="title">【行易通.车管家APP】</div>
-                <div class="detail">
-                    行易通.车管家APP是南宁市公安局交通警察支队车辆
-                    管理所面向广大机动车所有人和驾驶人推出的手机客户端
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_03.png" />
                 </div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>6))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_06.png" />
-            </div>
-            <div class="right">
-                <div class="title">【中国东盟博览会APP】</div>
-                <div class="detail">
-                    中国东盟博览会APP，2013年受桂林恒宇软件公司委
-                    托，替东盟博览会开发的APP,有Anidorid和Ios两个平台
+                <div class="right">
+                    <div class="title">【福环APP】</div>
+                    <div class="detail">
+                        福环APP是一款生活记录软件，此款APP所配套的手 环可以实时查看手环佩戴者的运动量、定位信息
+                    </div>
+                    <div style="clear:both;"></div>
                 </div>
-                <div style="clear:both;"></div>
             </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>7))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_07.png" />
-            </div>
-            <div class="right">
-                <div class="title">【CSMF体育营销论坛APP】</div>
-                <div class="detail">
-                    CSMF 体育营销论坛APP，2014年开发小组研发的全
-                    新论坛模式APP；集合了最新的微信聊天模式；简约
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_04.png" />
                 </div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>8))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_08.png" />
-            </div>
-            <div class="right">
-                <div class="title">【宁波风电移动办公系统APP】</div>
-                <div class="detail">
-                    宁波风电移动办公系统APP，用户可随时随地的查看
-                    各个风电场的装机容量、负荷、平均风速、平均风向等
+                <div class="right">
+                    <div class="title">【中国国电集团APP】</div>
+                    <div class="detail">
+                        中国国电集团APP，用户可随时随地的处理工作、通 讯录、浏览信息通知、收发邮件、OA收发文、处理
+                    </div>
+                    <div style="clear:both;"></div>
                 </div>
-                <div style="clear:both;"></div>
             </div>
-        </div>
-    </a>
-    <a href="{:U('test/appdetail',array('bgimg'=>9))}">
-        <div class="item">
-            <div class="left">
-               <img src="../image/app_thumb/APP_09.png" />
-            </div>
-            <div class="right">
-                <div class="title">【味道锅饭APP】</div>
-                <div class="detail">
-                    味道锅饭APP，可以实现APP订餐、订单管理、订餐
-                    状态查询、配送端路径优化等功能，做有配送员端
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_05.png" />
                 </div>
-                <div style="clear:both;"></div>
+                <div class="right">
+                    <div class="title">【行易通.车管家APP】</div>
+                    <div class="detail">
+                        行易通.车管家APP是南宁市公安局交通警察支队车辆 管理所面向广大机动车所有人和驾驶人推出的手机客户端
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
             </div>
-        </div>
-    </a>
-</div>
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_06.png" />
+                </div>
+                <div class="right">
+                    <div class="title">【中国东盟博览会APP】</div>
+                    <div class="detail">
+                        中国东盟博览会APP，2013年受桂林恒宇软件公司委 托，替东盟博览会开发的APP,有Anidorid和Ios两个平台
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_07.png" />
+                </div>
+                <div class="right">
+                    <div class="title">【CSMF体育营销论坛APP】</div>
+                    <div class="detail">
+                        CSMF 体育营销论坛APP，2014年开发小组研发的全 新论坛模式APP；集合了最新的微信聊天模式；简约
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_08.png" />
+                </div>
+                <div class="right">
+                    <div class="title">【宁波风电移动办公系统APP】</div>
+                    <div class="detail">
+                        宁波风电移动办公系统APP，用户可随时随地的查看 各个风电场的装机容量、负荷、平均风速、平均风向等
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </a>
+        <a href="appDetail.html">
+            <div class="item">
+                <div class="left">
+                    <img src="../image/app_thumb/APP_09.png" />
+                </div>
+                <div class="right">
+                    <div class="title">【味道锅饭APP】</div>
+                    <div class="detail">
+                        味道锅饭APP，可以实现APP订餐、订单管理、订餐 状态查询、配送端路径优化等功能，做有配送员端
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </a>
+    </div>
 </body>
 <script type="text/javascript" src="../plugin/aui/script/aui-slide.js"></script>
 <script type="text/javascript">
     var slide = new auiSlide({
-        container:document.getElementById("aui-slide"),
+        container: document.getElementById("aui-slide"),
         //"width":300,
-        "height":160,
-        "speed":500,
-        "pageShow":true,
-        "pageStyle":'dot',
-        "loop":true,
+        "height": 160,
+        "speed": 500,
+        "pageShow": true,
+        "pageStyle": 'dot',
+        "loop": true,
         "autoPlay": 3000, //自动播放
-        'dotPosition':'center',
+        'dotPosition': 'center',
     })
 </script>
+
 </html>
